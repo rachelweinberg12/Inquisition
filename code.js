@@ -1,3 +1,3 @@
 function myFunc (){
-   console.log('You Clicked Me!');
+   console.log('Hello!');
 }
