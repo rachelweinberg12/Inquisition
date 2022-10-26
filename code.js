@@ -1,3 +1,3 @@
 function myFunc (){
-    alert('You Clicked Me!');
+   console.log('You Clicked Me!');
 }
