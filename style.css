@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  padding: 2em;
+}
+
+body {
+  font-family: "FreeMono", monospace;
+  font-weight: 100;
+  text-align: center;
+}
+
+.btn {
+  color: black;
+  background: #9fc5e8;
+  padding: 10px 40px;
+  font-family: "FreeMono", monospace;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.5s;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  border: 3px solid black;
+  cursor: pointer;
+}
+
+input[type="number"] {
+  height: 20px;
+  width: 40px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "FreeMono", monospace;
+}
+
+#filters {
+  border: 2px solid black;
+  background-color: #9fc5e8;
+  padding: 1em 2em 2em 2em;
+  margin: 2em 2em 2em 2em;
+}
+
+.card {
+  border: 2px solid black;
+  background-color: #9fc5e8;
+  padding: 1em 2em 2em 2em;
+  margin: 2em 2em 2em 2em;
+  box-shadow: 2px 2px 5px black;
+  display: grid;
+  place-items: center;
+  box-sizing: content-box;
+}
+
+.tag {
+  color: black;
+  background: #ffe599;
+  padding: 3px 12px;
+  font-family: "FreeMono", monospace;
+  text-decoration: none;
+  transition: background 0.5s;
+  border: 2px solid #ffe599;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 3px 3px 3px;
+  box-shadow: 1px 1px 3px black;
+}
+
+.include {
+  background: #ffc823;
+  border: 2px solid #ffc823;
+}
+
+.exclude {
+  background: gray;
+  border: 2px solid gray;
+}

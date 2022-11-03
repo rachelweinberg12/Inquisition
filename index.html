@@ -6,44 +6,113 @@
   }
 </script>
 
+<head>
+  <link rel="stylesheet" type="text/css" />
+  <link href="style.css" rel="stylesheet" />
+</head>
+
 <body>
   <div id="app">
     <div v-if="index === -1">
       <!-- Show start page -->
-      To get started, fill in your play preferences in the form below.
-      <!-- Insert form here -->
-      <p>Which sources do you want to pull from to create your deck?</p>
-      <input
-        type="checkbox"
-        id="source1"
-        name="source1"
-        value="askhole"
-        v-model="sources"
-      />
-      <label for="source1">Askhole</label><br />
-      <input
-        type="checkbox"
-        id="source2"
-        name="source2"
-        value="austin"
-        v-model="sources"
-      />
-      <label for="source2">Austin</label><br />
-      <input
-        type="checkbox"
-        id="source3"
-        name="source3"
-        value="alexandra"
-        v-model="sources"
-      />
-      <label for="source3">Alexandra</label>
-      <button @click="start">Get Started!</button>
+      <h3>To get started, fill in your play preferences in the form below.</h3>
+      <div id="filters">
+        <!-- Sources input -->
+        <p>Which sources do you want to pull from to create your deck?</p>
+        <input type="checkbox" value="askhole" v-model="sources" />
+        <label for="source1">askhole</label><br />
+        <input type="checkbox" value="austin" v-model="sources" />
+        <label for="source2">austin</label><br />
+        <input type="checkbox" value="alexandra" v-model="sources" />
+        <label for="source3">alexandra</label>
+        <br />
+        <!--quality input-->
+        <p>
+          What range of quality (according to Rachel) would you like to include?
+          (1-5)
+        </p>
+        <span>
+          <input type="number" max="5" min="1" v-model="minQuality" />
+          -
+          <input type="number" max="5" min="1" v-model="maxQuality" />
+        </span>
+        <!-- intimacy input -->
+        <p>What range of intimacy are you going for? (1-5)</p>
+        <span>
+          <input type="number" max="5" min="1" v-model="minIntimacy" />
+          -
+          <input type="number" max="5" min="1" v-model="maxIntimacy" />
+        </span>
+        <!-- tags to include input -->
+        <p>What types of questions would you like to include?</p>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs.personal === 1), exclude: (tagPrefs.personal === 0)}"
+          @click="updateTagPref('personal')"
+          value="personal"
+        >
+          personal
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs.emotional === 1), exclude: (tagPrefs.emotional === 0)}"
+          @click="updateTagPref('emotional')"
+          value="emotional"
+        >
+          emotional
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs['sex/relationships'] === 1), exclude: (tagPrefs['sex/relationships'] === 0)}"
+          @click="updateTagPref('sex/relationships')"
+          value="sex/relationships"
+        >
+          sex/relationships
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs.work === 1), exclude: (tagPrefs.work === 0)}"
+          @click="updateTagPref('work')"
+          value="work"
+        >
+          work
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs.controversial === 1), exclude: (tagPrefs.controversial === 0)}"
+          @click="updateTagPref('controversial')"
+          value="controversial"
+        >
+          controversial
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs.ethics === 1), exclude: (tagPrefs.ethics === 0)}"
+          @click="updateTagPref('ethics')"
+          value="ethics"
+        >
+          ethics
+        </button>
+        <button
+          class="tag"
+          :class="{ include: (tagPrefs['ice breaker'] === 1), exclude: (tagPrefs['ice breaker'] === 0)}"
+          @click="updateTagPref('ice breaker')"
+          value="ice breaker"
+        >
+          ice breaker
+        </button>
+        <br />
+      </div>
+      <br />
+      <!--start button-->
+      <button class="btn" @click="start">Get Started!</button>
     </div>
     <div v-else>
-      Playing game
-      <div>{{ filteredDeck[index].question }}</div>
-      <button @click="flip">Next Question</button>
-      <!-- <li v-for="card in filteredDeck">{{ card.Question }}</li> -->
+      <!--card display-->
+      <div class="card">
+        <p>{{ filteredDeck[index].question }}</p>
+      </div>
+      <button class="btn" @click="flip">Next Question</button>
     </div>
   </div>
 </body>
@@ -58,30 +127,78 @@
         filteredDeck: [],
         mode: "start",
         index: -1,
-        sources: [], //need to use this data to make filteredDeck
+        sources: ["askhole", "austin", "alexandra"],
+        minQuality: 1,
+        maxQuality: 5,
+        minIntimacy: 1,
+        maxIntimacy: 5,
+        tagPrefs: {
+          personal: 1,
+          emotional: 1,
+          "sex/relationships": 1,
+          work: 1,
+          controversial: 1,
+          ethics: 1,
+          "ice breaker": 1,
+        },
       };
     },
     methods: {
       start() {
+        //try building deck based on user preferences
         this.configureDeck();
-        /*
-          if (this.filteredDeck === []){
-            stop submit and let person know that no cards match their specifications
-          }
-          */
-        //turn to the first card
-        this.flip();
+        //check that the deck actually has cards in it
+        if (this.filteredDeck.length === 0) {
+          //if deck is empty, tell user to try again
+          alert(
+            "There are no cards that fulfill your specifications. Try again with new filters."
+          );
+          return;
+        } else {
+          //if it does, game begins
+          this.flip();
+        }
       },
       configureDeck() {
-        for (let i = 0; i < deck.length; i++) {
-          console.log(this.sources.includes(deck[i].source));
-          if (this.sources.includes(deck[i].source)) {
-            this.filteredDeck.push(deck[i]);
+        //make arrays to store included and excluded tags
+        let excludedTags = [],
+          includedTags = [];
+        //get array of tag names
+        let tagNames = Object.keys(this.tagPrefs);
+        //for each tag
+        for (let i = 0; i < tagNames.length; i++) {
+          let currTag = tagNames[i];
+          console.log(currTag);
+          //check if its set to be included
+          if (this.tagPrefs[currTag] === 1) {
+            //add to included array
+            includedTags.push(currTag);
+            //check if its set to be excluded
+          } else if (!this.tagPrefs[currTag]) {
+            //add to excluded array
+            excludedTags.push(currTag);
           }
         }
+        //loop reads through each card
+        for (let i = 0; i < deck.length; i++) {
+          let card = deck[i];
+          //check that the current card fulfills all specifications
+          if (
+            this.sources.includes(card.source) &&
+            this.minQuality <= card.quality &&
+            this.maxQuality >= card.quality &&
+            this.minIntimacy <= card.intimacy &&
+            this.maxIntimacy >= card.intimacy &&
+            this.overlap(includedTags, card.tags) &&
+            !this.overlap(excludedTags, card.tags)
+          ) {
+            //if card fits, add it to the deck
+            this.filteredDeck.push(card);
+          }
+        }
+        //cards are correct; now shuffle
         this.shuffleDeck();
       },
-
       shuffleDeck() {
         let currentIndex = this.filteredDeck.length,
           randomIndex;
@@ -90,7 +207,6 @@
           // Pick a remaining element.
           randomIndex = Math.floor(Math.random() * currentIndex);
           currentIndex--;
-
           // And swap it with the current element.
           [this.filteredDeck[currentIndex], this.filteredDeck[randomIndex]] = [
             this.filteredDeck[randomIndex],
@@ -99,12 +215,32 @@
         }
       },
       flip() {
+        //increment the index or go back to 0 if we're at the end of the deck
         if (this.index < this.filteredDeck.length - 1) {
           this.index++;
         } else {
           this.index = 0;
         }
-        console.log("flipping", this.index);
+      },
+      overlap(array1, array2) {
+        //for each element in the first array
+        for (let i = 0; i < array1.length; i++) {
+          //if that element is contained in the second array
+          if (array2.includes(array1[i])) {
+            //the arrays overlap
+            return true;
+          }
+        }
+        //otherwise, they don't
+        return false;
+      },
+      updateTagPref(tagName) {
+        if (this.tagPrefs[tagName] === 2) {
+          this.tagPrefs[tagName] = 0;
+        } else {
+          this.tagPrefs[tagName]++;
+        }
+        console.log(this.tagPrefs);
       },
     },
   }).mount("#app");

@@ -12,8 +12,6 @@ function parseCSV(txt) {
   for (let i = 1; i < cards.length; i++) {
     deck.push(buildCard(cards[i]));
   }
-  //shuffle the deck
-  //shuffle(deck);
 }
 
 // fxn takes string representing card & array of attribute labels and returns card object
@@ -35,13 +33,11 @@ function buildCard(cardStr) {
     //build array of all other attributes
     attributes = cardStr.slice(qEnd + 2).split(",");
   }
-  console.log(attributes);
   //add each of these attributes to the card object with column labels as keys
   cardObj.source = attributes[0];
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
-  console.log(attributes[3]);
   cardObj.multiplePlayers = parseInt(attributes[4].trimEnd());
   //return the complete card object
   return cardObj;
@@ -60,7 +56,6 @@ function flip() {
   //update displayed question
   // document.getElementById("question").innerText = deck[index].Question; //update question text
 }
-*/
 
 // fxn shuffles the whole deck
 function shuffle(array) {
@@ -81,3 +76,4 @@ function shuffle(array) {
   }
   return array;
 }
+*/
