@@ -1,10 +1,112 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <!--plain text question display-->
-    <p id="question">Click below to start seeing questions!</p>
-    <!--button click moves to the next question-->
-    <button id="flip" onclick="flip()">Next Question</button>
-    <script src="code.js"></script>
-  </body>
-</html>
+<script type="importmap">
+  {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+
+<body>
+  <div id="app">
+    <div v-if="index === -1">
+      <!-- Show start page -->
+      To get started, fill in your play preferences in the form below.
+      <!-- Insert form here -->
+      <p>Which sources do you want to pull from to create your deck?</p>
+      <input
+        type="checkbox"
+        id="source1"
+        name="source1"
+        value="askhole"
+        v-model="sources"
+      />
+      <label for="source1">Askhole</label><br />
+      <input
+        type="checkbox"
+        id="source2"
+        name="source2"
+        value="austin"
+        v-model="sources"
+      />
+      <label for="source2">Austin</label><br />
+      <input
+        type="checkbox"
+        id="source3"
+        name="source3"
+        value="alexandra"
+        v-model="sources"
+      />
+      <label for="source3">Alexandra</label>
+      <button @click="start">Get Started!</button>
+    </div>
+    <div v-else>
+      Playing game
+      <div>{{ filteredDeck[index].question }}</div>
+      <button @click="flip">Next Question</button>
+      <!-- <li v-for="card in filteredDeck">{{ card.Question }}</li> -->
+    </div>
+  </div>
+</body>
+
+<script type="module">
+  import { createApp } from "vue";
+  import { deck } from "./code.js";
+
+  createApp({
+    data() {
+      return {
+        filteredDeck: [],
+        mode: "start",
+        index: -1,
+        sources: [], //need to use this data to make filteredDeck
+      };
+    },
+    methods: {
+      start() {
+        this.configureDeck();
+        /*
+          if (this.filteredDeck === []){
+            stop submit and let person know that no cards match their specifications
+          }
+          */
+        //turn to the first card
+        this.flip();
+      },
+      configureDeck() {
+        for (let i = 0; i < deck.length; i++) {
+          console.log(this.sources.includes(deck[i].source));
+          if (this.sources.includes(deck[i].source)) {
+            this.filteredDeck.push(deck[i]);
+          }
+        }
+        this.shuffleDeck();
+      },
+
+      shuffleDeck() {
+        let currentIndex = this.filteredDeck.length,
+          randomIndex;
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+          // Pick a remaining element.
+          randomIndex = Math.floor(Math.random() * currentIndex);
+          currentIndex--;
+
+          // And swap it with the current element.
+          [this.filteredDeck[currentIndex], this.filteredDeck[randomIndex]] = [
+            this.filteredDeck[randomIndex],
+            this.filteredDeck[currentIndex],
+          ];
+        }
+      },
+      flip() {
+        if (this.index < this.filteredDeck.length - 1) {
+          this.index++;
+        } else {
+          this.index = 0;
+        }
+        console.log("flipping", this.index);
+      },
+    },
+  }).mount("#app");
+</script>
+<script type="module" src="code.js"></script>

@@ -13,7 +13,7 @@ function parseCSV(txt) {
     deck.push(buildCard(cards[i]));
   }
   //shuffle the deck
-  shuffle(deck);
+  //shuffle(deck);
 }
 
 // fxn takes string representing card & array of attribute labels and returns card object
@@ -22,7 +22,7 @@ function buildCard(cardStr) {
   let attributes;
   //add the question to the deck
   if (cardStr[0] === '"') {
-    //handling special case with commas in question
+    //handling special case with commas in question (there are actually more edge cases to handle, fix later)
     const qEnd = cardStr.indexOf('?",');
     //add the question to the card object
     cardObj.question = cardStr.slice(1, qEnd + 1);
@@ -35,18 +35,19 @@ function buildCard(cardStr) {
     //build array of all other attributes
     attributes = cardStr.slice(qEnd + 2).split(",");
   }
+  console.log(attributes);
   //add each of these attributes to the card object with column labels as keys
   cardObj.source = attributes[0];
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
-  cardObj.multiplePlayers = parseInt(attributes[4]);
+  console.log(attributes[3]);
+  cardObj.multiplePlayers = parseInt(attributes[4].trimEnd());
   //return the complete card object
   return cardObj;
 }
 
-let index = -1; //tracks question we're on; initial state is before first question
-
+/*
 // fxn moves on to next question
 function flip() {
   //increment question index
@@ -59,6 +60,7 @@ function flip() {
   //update displayed question
   // document.getElementById("question").innerText = deck[index].Question; //update question text
 }
+*/
 
 // fxn shuffles the whole deck
 function shuffle(array) {
