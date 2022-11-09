@@ -1,43 +1,243 @@
-question,source,quality,intimacy,tags,multiple players?
-In what ways are you inhibited from expressing love?,askhole,4,4,sex/relationships;emotional;personal,1
-What difficult or painful experience would you recommend to everyone?,askhole,1,2,personal,1
-What's the most intense emotional pain you've ever experienced?,askhole,5,4,emotional;personal,1
-In what ways don't you trust yourself?,askhole,3,3,personal,1
-How have you disappointed your parents?,askhole,4,4,personal,1
-What about yourself have you been trying to fix for a long time?,askhole,5,4,personal;work,1
-"If you had to choose one, would you rather double or halve your sex drive?",askhole,2,3,personal;sex/relationships;would you rather,1
-Who do you respect that you know personally?,austin,1,1,personal,1
-Who do you dislike that you know personally?,austin,1,2,personal,1
-What is your number one concern right now?,austin,1,2,work;personal;EA,1
-What about yourself do you not tell people?,austin,1,4,personal,1
-Have you considered seeing a therapist?,austin,3,4,personal;emotional,1
-What do you think about me? What do you like? What should I change?,austin,4,5,personal;hard mode,0
-What makes you uncomfortable that you're reluctant to address?,austin,3,4,personal;emotional,1
-What percent of your personality is exaggerated for show?,austin,4,4,personal,1
-"Who do you still like, romantically?",austin,2,4,personal;emotional;sex/relationships,1
-What are you scared that you're wrong about?,austin,3,2,EA;ethics;personal;work,1
-What do you think about at night before falling asleep?,austin,2,2,personal,1
-What do you like that no one else does?,austin,2,1,personal,1
-Who do you care about impressing?,austin,2,2,personal;work,1
-What's the highest impact thing you do?,austin,2,3,work;EA,1
-Would you want to be asked out on the street?,austin,1,1,personal;yes/no,1
-What's the most valuable cheap thing you own? The most worthless expensive thing?,austin,3,1,personal;ice breaker,1
-What is a low-status belief you hold?,austin,4,3,controversial;EA,1
-Who are your enemies? Who is your outgroup?,austin,3,2,ethics;controversial,1
-When have you failed to act and regretted it?,austin,3,2,ethics;personal,1
-What book has most changed your life?,austin,3,2,personal,1
-What conversation topics do you hate but fail to avoid?,austin,2,2,personal,1
-What's the loneliest you've ever been?,austin,4,4,personal;emotional;sex/relationships,1
-Last time you were afraid someone was going to hurt you?,austin,3,3,personal,1
-Last time you orgasmed?,austin,2,5,personal;sex/relationships,1
-Would it be ethical to replace one person with a copy of you? A copy of (Barak Obama)?,austin,2,2,ethics;EA;yes/no,1
-What are your favorite tools?,austin,3,1,work,1
-Where do you have killer taste?,austin,2,1,personal,1
-What do you practice obsessively?,austin,3,1,work;personal;ice breaker,1
-Where are your bottlenecks?,austin,2,2,work,1
-What would you do with 10M?,austin,3,1,EA;ethics;personal;work,1
-What community are you part of?,austin,2,1,personal,1
-What do you evangelize?,austin,4,2,personal;ice breaker,1
-What are your weekly defaults?,austin,1,1,ice breaker,1
-What senses do you have that others don't?,austin,3,1,personal;ice breaker,1
-What are your favorite bullets to bite?,austin,4,1,ice breaker;EA,1
+question,source,quality,intimacy,tags
+In what ways are you inhibited from expressing love?,askhole,4,4,relationships; emotional; personal
+What difficult or painful experience would you recommend to everyone?,askhole,1,2,personal
+What's the most intense emotional pain you've ever experienced?,askhole,5,4,emotional; personal
+In what ways don't you trust yourself?,askhole,3,3,personal
+How have you disappointed your parents?,askhole,4,4,personal
+What about yourself have you been trying to fix for a long time?,askhole,5,4,personal; productivity
+"If you had to choose one, would you rather double or halve your sex drive?",askhole,2,3,personal; sex; would you rather
+How would you raise a child differently from how your parents raised you?,askhole,5,3,personal; emotional
+What was the last thing you cried about? When was it?,askhole,4,4,personal; emotional
+What was the most difficult thing you've ever had to do?,askhole,3,3,personal; emotional; work
+In what ways do you tend to fail at communication?,askhole,3,3,personal; emotional
+What is currently your greatest insecurity?,askhole,5,4,personal; emotional; ethics; EA
+Which of your habits conflict with your vales?,askhole,4,3,personal; emotional
+What aspect about the person to your left gives you the strongest negative feeling?,askhole,5,5,personal; emotional; hard mode
+What do you still owe someone an apology for?,askhole,2,3,personal; emotional
+What's the most sick (mental or physical) you've ever been?,askhole,2,3,personal; emotional
+Who do you hate most?,askhole,2,3,personal; emotional
+What is your biggest obstacle toward peace?,askhole,1,3,personal; emotional
+What about your appearance would you like to change?,askhole,3,5,personal; emotional
+What have you done that you are most ashamed of?,askhole,2,5,personal; emotional; hard mode
+Are you afraid of death? Why or why not?,askhole,2,2,personal; emotional
+How do you heal from painful experiences? How do you know when you're done healing?,askhole,1,3,personal; emotional
+What was your biggest financial mistake?,askhole,3,4,personal
+What's the most intense physical pain you've ever experienced?,askhole,3,3,personal
+How often and in what ways does fear show up in you?,askhole,3,3,personal; emotional
+"What have you planned in greater detail: killing yourself, or killing someone else?",askhole,2,3,personal
+What problems do you see in the relationships of those around you?,askhole,5,3,relationships
+You have to marry someone in this room right now. Who is it?,askhole,3,5,emotional; relationships
+Is there anything which arouses you that you've never admitted to anybody?,askhole,3,5,sex; hard mode
+What unusual trait do you find most attractive in a romantic partner?,askhole,4,2,sex; relationships
+"Out of all your past sexual experiences, what has made you most uncomfortable?",askhole,3,4,sex
+"If you were invited to an all-nude party, where all the participants are required to be naked the whole time, would you go?",askhole,3,3,relationships; personal
+"When you introspect, away from society and your physical body, deep inside, do you feel a sense of gender?",askhole,2,2,sex; personal
+What were the conditions of your last break-up?,askhole,3,3,relationships
+"Would you rather fuck your girlfriend who is inhabiting your mother's body, or your mother who is inhabiting your girlfriend's body? (If you date men, switch it to boyfriend and father.)",askhole,2,4,sex; relationships; would you rather
+"In total, have you given or received more oral sex?",askhole,3,4,sex; relationships
+What's one of the most adventurous things you've ever done in bed?,askhole,4,5,sex
+Would you date yourself?,askhole,4,2,relationships
+What percentage of your preferred age/gender demographic would you be down to have sex with after roughly an hour of flirting?,askhole,4,2,sex
+"Have you ever been in an open or polyamorous relationship? If not, would you consider it?",askhole,3,2,sex; relationships; yes/no
+Could you have a serious relationship with someone who expressed that they thought they were unworthy of the relationship?,askhole,2,2,relationships; yes/no
+Have you ever dated someone who you felt was below your standards?,askhole,3,4,relationships; yes/no
+How easy is it for you to orgasm?,askhole,2,4,sex
+Do you ever feel guilt or shame for romantically rejecting people who are interested in you?,askhole,2,2,relationships; yes/no
+"If you could press a button and double the sex drive of all women on earth, would you do it?",askhole,3,3,sex; yes/no
+"If you tried, could you list the names of everyone you've had sex with?",askhole,2,4,sex; relationships; yes/no
+"Are yelling fights in relationships more typical and inevitable, or terrible and avoidable?",askhole,2,2,relationships
+What was your most disappointing sexual experience?,askhole,4,4,sex
+What emotion/feeling are you currently suppressing or ignoring?,askhole,2,4,emotional
+Who in the room do you admire the most?,askhole,5,3,warm and fuzzy
+Did your parents do a good job?,askhole,5,3,personal
+What are the signs that someone understands you uniquely?,askhole,3,3,personal
+"What is the best advice you've received, and why did you need it?",askhole,3,3,personal
+What are you waiting to hear from someone close to you?,askhole,2,4,personal
+What do you most admire about the person to your right?,askhole,5,4,warm and fuzzy
+"At the gut level, do you feel that the world is safe or not safe?",askhole,2,2,emotional
+"Would you rather increase the amount that people respect you, or increase the amount they desire you?",askhole,3,3,personal; would you rather
+What relatively common experience have you never had?,askhole,3,3,personal
+Do you ever enjoy the experience of emotional pain?,askhole,3,4,personal; emotional
+Have you been loved enough?,askhole,3,5,emotional; personal; yes/no
+"Have you ever had (what you considered to be) a spiritual experience? If so, what was it like and what effects did it have on you?",askhole,2,3,personal
+"Do you feel a greater sense of satisfaction when you gain approval from people who are very similar to you, or very different from you?",askhole,4,2,personal; work
+"If you could have one but not the other, would you rather love someone or be loved by someone?",askhole,3,3,personal; relationships
+What kind of people do you get along best with?,askhole,4,2,personal
+Whihc of your achievements are you most proud of?,askhole,3,3,personal; work
+Given the guarantee that nobody will ask you the question: What is a question that you would refuse to answer?,askhole,2,5,personal; hard mode
+How boring are you?,askhole,2,4,personal
+Do you have more thoughts or more feelings?,askhole,1,2,personal; emotional
+What are your coping mechanisms for stress?,askhole,2,2,personal; emotional; work
+Would you rather double the amount of emotional pain and pleasure you feel on a daily basis or cut both in half?,askhole,2,2,emotional
+What is the most interesting fact about you the few people know?,askhole,2,3,personal
+Which of your personality traits are you most proud of?,askhole,5,4,personal
+"Which group is larger: people who trust you, or people you trust?",askhole,3,3,personal
+What is the most significant thing you've ever changed your mind about?,askhole,5,2,intellectual
+"If you could ask everybody in the world one question, what would it be? You don't get to hear their answers.",askhole,3,1,intellectual
+Are some human lives worth more than others?,askhole,2,3,intellectual; ethics; controversial
+"You must pick a number right now and live that many years total, in good physical health. You can't die before, and you can't extend after. How many years do you choose to live?",askhole,3,1,intellectual
+"Do you consider the state of ""unconditionally loving everyone"" to be desirable or undesirable for you, given it were possible?",askhole,3,2,emotional; ethics
+"Are there any thoughts so offensive that you would advocate shaming those who think them, even if they don't act on those thoughts?",askhole,2,3,intellectual; ethics; yes/no
+"Which of your beliefs would be the most difficult to change, even in the face of overwhelming evidence?",askhole,4,3,intellectual
+"Are there any cases in which you would support forced, involuntary brain modification to change someone else's mind, urges, or behavior?",askhole,3,4,intellectual; ethics; yes/no
+You can make a designer baby. Would you rather optimize it primarily for intelligence or happiness/optimism?,askhole,3,4,intellectual; personal; would you rather
+What do you think enlightenment is?,askhole,2,2,intellectual
+"Do you believe the set of concepts like ""duty"", ""should"", ""obligation"", and ""deserving"" are ultimately more valid or meaningless?",askhole,3,2,intellectual; ethics
+"If you could press a button that would make you feel deeply and permanently that everything was ok, would you? Assume that you'd remain functional in the world.",askhole,2,3,emotional; yes/no
+Can someone both be a kind person and also hold the exact opposite of your political views?,askhole,3,3,intellectual; controversial; yes/no
+"If you could, would you wirehead (i.e. hook yourself up to a hypothetical machine that makes you totally and eternally happy and satisfied)?",askhole,3,2,yes/no
+"If you (and only you) could see one measurement or statistic over everyone's heads, what would you want it to indicate?",askhole,3,3,intellectual
+What you prefer to date someone 20 IQ points higher or 5 IQ points lower than you?,askhole,3,3,relationships; would you rather
+"If you could press a button that would instantly erase every single false belief you have, would you do it?",askhole,3,2,intellectual; yes/no
+"If you could ask the universe one question and get the truth, what would you want to know?",askhole,4,2,intellectual
+Is torture ever permissible?,askhole,2,2,ethics; intellectual
+"On planet A, everyone's 30% dumber, and you're a genius by comparison. On planet B, everyone's 30% smarter, and you're an idiot by comparison. You stay the same. Which planet would you prefer to live on?",askhole,2,3,intellectual; would you rather
+Which technology should not have been invented?,askhole,3,1,intellectual
+"If you could magically cause a neutral nude photo of every human to be published publicly on the internet every year on their birthday, would you?",askhole,4,2,intellectual
+"Of all the beliefs you hold, which is most likely to be considered barbaric in 150 years?",askhole,2,2,controversial
+You see a friend getting into their third emotionally abusive relationship in a row. Are they a victim?,askhole,3,3,controversial
+"Do you feel that you have conscious control over your beliefs? Could you, right now, decide to believe something else if you tried? If so, which beliefs?",askhole,3,2,controversial
+What's the most controversial opinion you hold among your own social group?,askhole,4,4,controversial
+What viewpoint is the most difficult for you to empathize with?,askhole,4,4,controversial
+Does “no” always really mean “no”?,askhole,1,2,controversial
+"If you had to fuck a cow, would you rather it be dead or alive?",askhole,1,3,sex; would you rather
+Do you have any political or social opinions that you're afraid to express to your friends?,askhole,3,3,controversial
+"In your personal experience, even if the difference is extremely slight, are men or women better at handling suffering?",askhole,2,3,controversial
+"In a world where different ethnicities had strong genetic differences which caused different moral behavior, would racism be okay or still not okay?",askhole,3,5,controversial; yes/no; hard mode
+What groups or communities are you most judged for being a member of?,askhole,4,4,controversial
+"In a world where prostitution becomes totally legal and regulated, should sex workers be allowed to refuse clients on the basis of race?",askhole,3,2,controversial
+"Would you rather have accidentally killed someone, or be a nonoffending pedophile?",askhole,3,3,controversial
+Would you support the use of realistic child sex dolls by pedophiles?,askhole,3,2,controversial; ethics; intellectual
+Would you rather be raped or falsely (but convincingly) accused of rape?,askhole,3,3,controversial
+"Does modern western culture encourage women either to overreact or underreact to “minor” sexual assaults, such as groping, too-drunk sex, etc.?",askhole,3,3,controversial
+How do society's morals differ from your own?,askhole,2,3,controversial
+"Regardless of your conscious beliefs or actions, do you feel in your gut that sex work is degrading?",askhole,2,3,controversial
+Which stereotype is actually pretty accurate?,askhole,3,4,controversial
+"If you had to eliminate one million people from one ethnicity, which would it be?",askhole,2,5,controversial; hard mode
+A 14-year-old has sex. How large does the age gap have to be between the 14-year-old and their partner before the child can no longer meaningfully consent to sex?,askhole,3,2,controversial; ethics
+"If a sex worker consents to sex with a customer under expectation of payment, but then the customer refuses to pay, is this closer to rape or to theft?",askhole,3,2,controversial; ethics
+What's your opinion of education that teaches men to be more seductive?,askhole,3,3,controversial
+Do women have any systemic privilege due to their gender?,askhole,4,3,controversial
+Is incest wrong? Should it be illegal?,askhole,3,3,controversial; ethics
+"Are there any viewpoints so offensive that they deserve to be shut down or suppressed? If so, which ones?",askhole,3,3,controversial
+"Regardless of your support or personal feelings, does your subconscious view trans-identifying people as closer to their birth or current gender?",askhole,3,4,controversial
+Is bestiality wrong? Are you a vegan?,askhole,3,3,controversial; ethics
+Who do you respect that you know personally?,austin,1,1,personal
+Who do you dislike that you know personally?,austin,1,2,personal
+What is your number one concern right now?,austin,1,2,productivity; personal; EA
+What about yourself do you not tell people?,austin,1,4,personal
+Have you considered seeing a therapist?,austin,3,4,personal; emotional
+What do you think about me? What do you like? What should I change?,austin,4,5,personal; hard mode
+What makes you uncomfortable that you're reluctant to address?,austin,3,4,personal; emotional
+What percent of your personality is exaggerated for show?,austin,4,4,personal
+"Who do you still like, romantically?",austin,2,4,personal; emotional; relationships
+What are you scared that you're wrong about?,austin,3,2,EA; ethics; personal; work
+What do you think about at night before falling asleep?,austin,2,2,personal
+What do you like that no one else does?,austin,2,1,personal
+Who do you care about impressing?,austin,2,2,personal; work
+What's the highest impact thing you do?,austin,2,3,work; EA
+Would you want to be asked out on the street?,austin,1,1,personal; yes/no
+What's the most valuable cheap thing you own? The most worthless expensive thing?,austin,3,1,personal; ice breaker
+What is a low-status belief you hold?,austin,4,3,controversial; EA
+Who are your enemies? (Who is your outgroup?),austin,3,2,ethics; controversial
+When have you failed to act and regretted it? ,austin,3,2,ethics; personal
+What book has most changed your life?,austin,3,2,personal
+What conversation topics do you hate but fail to avoid? ,austin,2,2,personal
+What's the loneliest you've ever been?,austin,4,4,personal; emotional; relationships
+Last time you were afraid someone was going to hurt you? ,austin,3,3,personal
+Last time you orgasmed?,austin,2,5,personal; sex
+Would it be ethical to replace one person with a copy of you? A copy of (Barak Obama)?,austin,2,2,ethics; EA; yes/no
+What are your favorite tools?,austin,3,1,work
+Where do you have killer taste?,austin,2,1,personal
+What do you practice obsessively?,austin,3,1,work; personal; ice breaker
+Where are your bottlenecks?,austin,2,2,work
+What would you do with 10M?,austin,3,1,EA; ethics; personal; work
+What community are you part of? ,austin,2,1,personal
+What do you evangelize?,austin,4,2,personal; ice breaker
+What are your weekly defaults?,austin,1,1,ice breaker
+What senses do you have that others don't?,austin,3,1,personal; ice breaker
+What are your favorite bullets to bite?,austin,5,1,ice breaker; EA
+"Given the choice of anyone in the world, whom would you want as a dinner guest?",36 questions to fall in love,2,1,personal; ice breaker
+Would you like to be famous? In what way?,36 questions to fall in love,2,2,personal; yes/no
+"Before making a telephone call, do you ever rehearse what you are going to say? Why?",36 questions to fall in love,2,3,personal; yes/no
+What would constitute a “perfect” day for you?,36 questions to fall in love,3,3,personal
+When did you last sing to yourself? To someone else?,36 questions to fall in love,2,2,personal
+"If you were able to live to the age of 90 and retain either the mind or body of a 30-year-old for the last 60 years of your life, which would you want?",36 questions to fall in love,2,1,personal; would you rather
+For what in your life do you feel most grateful?,36 questions to fall in love,5,4,personal; emotional; warm and fuzzy
+"If you could change anything about the way you were raised, what would it be?",36 questions to fall in love,5,4,personal
+Take four minutes and tell your life story in as much detail as possible.,36 questions to fall in love,3,4,personal
+"If you could wake up tomorrow having gained any one quality or ability, what would it be?",36 questions to fall in love,3,3,personal
+"If a crystal ball could tell you the truth about yourself, your life, the future or anything else, what would you want to know?",36 questions to fall in love,3,3,personal; intellectual
+Is there something that you’ve dreamed of doing for a long time? Why haven’t you done it?,36 questions to fall in love,3,3,personal; work
+What is the greatest accomplishment of your life?,36 questions to fall in love,3,3,personal; work
+What do you value most in a friendship?,36 questions to fall in love,4,3,personal; emotional; relationships
+What is your most treasured memory?,36 questions to fall in love,2,4,personal; emotional; warm and fuzzy
+What is your most terrible memory?,36 questions to fall in love,3,5,personal; emotional
+"If you knew that in one year you would die suddenly, would you change anything about the way you are now living? Why?",36 questions to fall in love,2,3,personal
+What does friendship mean to you?,36 questions to fall in love,1,3,personal
+What roles do love and affection play in your life?,36 questions to fall in love,1,4,personal; emotional; relationships
+Alternate sharing something you consider a positive characteristic of the person to your right. Share a total of five items.,36 questions to fall in love,4,5,warm and fuzzy
+How close and warm is your family? Do you feel your childhood was happier than most other people’s?,36 questions to fall in love,5,4,personal; emotional
+How do you feel about your relationship with your mother?,36 questions to fall in love,4,5,personal; emotional
+"Make three true “we” statements each. For instance, “We are in this room feeling...""",36 questions to fall in love,2,3,warm and fuzzy
+"Complete this sentence: “I wish I had someone with whom I could share ...""",36 questions to fall in love,2,3,personal
+"If you were going to become a close friend with your partner, please share what would be important for him or her to know.",36 questions to fall in love,2,4,personal; 2 player only
+"Tell your partner what you like about them; be very honest this time, saying things that you might not say to someone you’ve just met.",36 questions to fall in love,5,5,warm and fuzzy; 2 player only
+Share an embarrassing moment in your life.,36 questions to fall in love,3,4,personal
+When did you last cry in front of another person? By yourself?,36 questions to fall in love,3,4,emotional
+Tell your partner something that you like about them already.,36 questions to fall in love,3,4,warm and fuzzy; 2 player only
+"What, if anything, is too serious to be joked about?",36 questions to fall in love,2,3,controversial
+"If you were to die this evening with no opportunity to communicate with anyone, what would you most regret not having told someone? Why haven’t you told them yet?",36 questions to fall in love,2,4,personal
+"Your house, containing everything you own, catches fire. After saving your loved ones and pets, you have time to safely make a final dash to save any one item. What would it be? Why?",36 questions to fall in love,3,3,personal
+"Of all the people in your family, whose death would you find most disturbing? Why?",36 questions to fall in love,3,3,personal; emotional
+"Share a personal problem and ask your partner’s advice on how he or she might handle it. Also, ask your partner to reflect back to you how you seem to be feeling about the problem you have chosen.",36 questions to fall in love,4,4,personal; 2 player only
+"which of the following six emotions do you feel most often (these are the six that infants express): happiness, anger, sadness, fear, surprise, or disgust?",alexandra,4,4,emotional
+"what is your favorite text (novel, play, textbook, speech…)? why?",alexandra,5,2,personal; ice breaker
+what is the most meaningful trip you’ve ever taken? the most enjoyable?,alexandra,2,2,personal; ice breaker
+"if you had to live in a decade in the past, controlling for the increase in standards of living and social freedoms over the past few centuries, which would you choose?",alexandra,2,1,personal; ice breaker
+what person has changed you the most? in what ways?,alexandra,4,4,personal; emotional; warm and fuzzy
+what is your love language?,alexandra,4,4,emotional; relationships
+what activities make you happiest?,alexandra,5,3,personal
+what is your worst memory of your parents?,alexandra,4,5,personal; emotional
+who do you feel the safest around?,alexandra,4,4,personal; emotional
+tell me about a concept you’ve recently learned.,alexandra,3,3,intellectual
+who do you miss most out of everyone you’ve known?,alexandra,3,4,personal; emotional; relationships
+what quality do you value most in people?,alexandra,4,4,personal; relationships
+what quality do you value most about yourself?,alexandra,5,4,personal; warm and fuzzy
+what’s the strongest emotion you’ve ever felt?,alexandra,5,4,emotional
+how do you define success? do you think you will achieve it?,alexandra,3,3,work
+what is a sentimental value item you own?,alexandra,2,3,personal
+what is your favorite place in the city where you grew up?,alexandra,2,2,personal; ice breaker
+what are your thoughts on citizens united?,alexandra,1,1,controversial
+what is your most impactful middle school memory?,alexandra,3,4,personal
+"where would you most like to be taken on a date, realistically and theoretically?",alexandra,3,3,relationships
+"if you could pick any number of years to live to, what number would it be?",alexandra,3,2,intellectual
+what quality would you most like to change about yourself?,alexandra,3,5,personal
+how would you describe your moral system? how did you choose it?,alexandra,3,3,ethics; intellectual
+what are your thoughts on children and on marriage?,alexandra,3,4,personal; relationships; family
+in what kind of place do you want to live?,alexandra,3,2,personal
+would you get along with yourself?,alexandra,3,3,personal
+"in what way have you changed the most since being a child (not including self control, theory of mind, etc.)?",alexandra,3,4,personal
+under what delusions do you live/have you lived?,alexandra,4,4,intellectual; personal
+what is your deepest regret?,alexandra,3,5,personal
+what is your favorite food or meal you’ve ever had?,alexandra,2,1,ice breaker
+what is the most annoying quality in another person?,alexandra,3,3,personal; relationships
+favorite age you’ve been so far and/or favorite year of your life?,alexandra,4,3,personal
+do you think your external appearance is a good reflection of your internal appearance?,alexandra,3,4,personal
+what is your cafe order? your bar order?,alexandra,3,1,ice breaker
+are you a weed or an alcohol person? In what situation do you prefer either?,alexandra,3,3,personal
+what communities do you identify with/see yourself as a part of? Wish you were a part of?,alexandra,3,3,personal
+what’s your type visually? personality wise? What’s one specific thing you find attractive in your preferred sex?,alexandra,3,4,personal; sex; relationships
+do you think you are special?,alexandra,3,4,personal
+what is your most impactful high school memory?,alexandra,3,4,personal
+what scares you most?,alexandra,2,4,emotional
+are you afraid of death?,alexandra,3,3,emotional; personal; yes/no
+what are you most looking forward to in your future?,alexandra,3,3,personal
+what is one thing you remember realizing about yourself?,alexandra,4,4,personal
+is technological progress on net good?,alexandra,2,3,intellectual
+what is your earliest memory?,alexandra,2,3,personal
+if you could be immortal would you choose to be?,alexandra,3,2,personal; intellectual
+do you prefer spending time with people similar to or different from yourself?,alexandra,3,2,personal
+what is your favorite scent?,alexandra,1,1,personal
+at what age did you become ‘conscious’?,alexandra,3,3,personal; intellectual
+what is one thing you wish your parents had done differently in raising you?,alexandra,3,4,personal; family

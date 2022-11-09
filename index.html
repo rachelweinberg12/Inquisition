@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+
+<script
+  async
+  src="https://ga.jspm.io/npm:es-module-shims@1.6.2/dist/es-module-shims.js"
+></script>
+
 <script type="importmap">
   {
     "imports": {
@@ -14,94 +21,56 @@
 <body>
   <div id="app">
     <div v-if="index === -1">
+      <h3>To get started, fill in your play preferences or select a preset.</h3>
       <!-- Show start page -->
-      <h3>To get started, fill in your play preferences in the form below.</h3>
-      <div id="filters">
-        <!-- Sources input -->
-        <p>Which sources do you want to pull from to create your deck?</p>
-        <input type="checkbox" value="askhole" v-model="sources" />
-        <label for="source1">askhole</label><br />
-        <input type="checkbox" value="austin" v-model="sources" />
-        <label for="source2">austin</label><br />
-        <input type="checkbox" value="alexandra" v-model="sources" />
-        <label for="source3">alexandra</label>
-        <br />
-        <!--quality input-->
-        <p>
-          What range of quality (according to Rachel) would you like to include?
-          (1-5)
-        </p>
-        <span>
-          <input type="number" max="5" min="1" v-model="minQuality" />
-          -
-          <input type="number" max="5" min="1" v-model="maxQuality" />
-        </span>
-        <!-- intimacy input -->
-        <p>What range of intimacy are you going for? (1-5)</p>
-        <span>
-          <input type="number" max="5" min="1" v-model="minIntimacy" />
-          -
-          <input type="number" max="5" min="1" v-model="maxIntimacy" />
-        </span>
-        <!-- tags to include input -->
-        <p>What types of questions would you like to include?</p>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs.personal === 1), exclude: (tagPrefs.personal === 0)}"
-          @click="updateTagPref('personal')"
-          value="personal"
-        >
-          personal
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs.emotional === 1), exclude: (tagPrefs.emotional === 0)}"
-          @click="updateTagPref('emotional')"
-          value="emotional"
-        >
-          emotional
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs['sex/relationships'] === 1), exclude: (tagPrefs['sex/relationships'] === 0)}"
-          @click="updateTagPref('sex/relationships')"
-          value="sex/relationships"
-        >
-          sex/relationships
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs.work === 1), exclude: (tagPrefs.work === 0)}"
-          @click="updateTagPref('work')"
-          value="work"
-        >
-          work
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs.controversial === 1), exclude: (tagPrefs.controversial === 0)}"
-          @click="updateTagPref('controversial')"
-          value="controversial"
-        >
-          controversial
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs.ethics === 1), exclude: (tagPrefs.ethics === 0)}"
-          @click="updateTagPref('ethics')"
-          value="ethics"
-        >
-          ethics
-        </button>
-        <button
-          class="tag"
-          :class="{ include: (tagPrefs['ice breaker'] === 1), exclude: (tagPrefs['ice breaker'] === 0)}"
-          @click="updateTagPref('ice breaker')"
-          value="ice breaker"
-        >
-          ice breaker
-        </button>
-        <br />
+      <div id="settings">
+        <div id="form">
+          <!-- Sources input -->
+          <p>Which sources do you want to pull from to create your deck?</p>
+
+          <source-item
+            v-for="item in sourcePrefs"
+            :source="item"
+            :key="item.name"
+          ></source-item>
+
+          <br />
+          <!--quality input-->
+          <p>
+            What range of quality (according to Rachel) would you like to
+            include? (1-5)
+          </p>
+          <span>
+            <input type="number" max="5" min="1" v-model="minQuality" />
+            -
+            <input type="number" max="5" min="1" v-model="maxQuality" />
+          </span>
+          <!-- intimacy input -->
+          <p>What range of intimacy are you going for? (1-5)</p>
+          <span>
+            <input type="number" max="5" min="1" v-model="minIntimacy" />
+            -
+            <input type="number" max="5" min="1" v-model="maxIntimacy" />
+          </span>
+          <!-- tags to include input -->
+          <p>What types of questions would you like to include?</p>
+          <tag-item
+            v-for="item in tagPrefs"
+            :tag="item"
+            :key="item.name"
+          ></tag-item>
+          <br />
+        </div>
+        <div id="presets">
+          <!--presets-->
+          <button class="preset" @click="startAskhole">Regular Askhole</button>
+          <button class="preset" @click="start36Questions">
+            36 Questions to Fall In Love
+          </button>
+          <button class="preset" @click="startRachelFavs">
+            Rachel's Favorites
+          </button>
+        </div>
       </div>
       <br />
       <!--start button-->
@@ -112,36 +81,44 @@
       <div class="card">
         <p>{{ filteredDeck[index].question }}</p>
       </div>
-      <button class="btn" @click="flip">Next Question</button>
+      <button class="flip" @click="back">&lt;</button>
+      <button class="flip" @click="fwd">></button>
     </div>
   </div>
 </body>
 
 <script type="module">
   import { createApp } from "vue";
-  import { deck } from "./code.js";
+  import { loadDeckAndPrefs } from "./code.js";
+  import TagItem from "./TagItem.js";
+  import SourceItem from "./SourceItem.js";
 
   createApp({
+    components: {
+      TagItem,
+      SourceItem,
+    },
     data() {
       return {
         filteredDeck: [],
         mode: "start",
         index: -1,
-        sources: ["askhole", "austin", "alexandra"],
         minQuality: 1,
         maxQuality: 5,
         minIntimacy: 1,
         maxIntimacy: 5,
-        tagPrefs: {
-          personal: 1,
-          emotional: 1,
-          "sex/relationships": 1,
-          work: 1,
-          controversial: 1,
-          ethics: 1,
-          "ice breaker": 1,
-        },
+        tagPrefs: [],
+        sourcePrefs: [],
+        fullDeck: [],
+        shuffle: true,
       };
+    },
+    async created() {
+      const response = await fetch("questions.csv");
+      const deckStr = await response.text();
+      [this.fullDeck, this.tagPrefs, this.sourcePrefs] =
+        loadDeckAndPrefs(deckStr);
+      console.log(this.sourcePrefs);
     },
     methods: {
       start() {
@@ -156,35 +133,40 @@
           return;
         } else {
           //if it does, game begins
-          this.flip();
+          this.fwd();
         }
       },
       configureDeck() {
         //make arrays to store included and excluded tags
         let excludedTags = [],
           includedTags = [];
-        //get array of tag names
-        let tagNames = Object.keys(this.tagPrefs);
         //for each tag
-        for (let i = 0; i < tagNames.length; i++) {
-          let currTag = tagNames[i];
-          console.log(currTag);
+        for (let i = 0; i < this.tagPrefs.length; i++) {
           //check if its set to be included
-          if (this.tagPrefs[currTag] === 1) {
+          if (this.tagPrefs[i].pref === 1) {
             //add to included array
-            includedTags.push(currTag);
+            includedTags.push(this.tagPrefs[i].name);
             //check if its set to be excluded
-          } else if (!this.tagPrefs[currTag]) {
+          } else if (!this.tagPrefs[i].pref) {
             //add to excluded array
-            excludedTags.push(currTag);
+            excludedTags.push(this.tagPrefs[i].name);
+          }
+        }
+        //make array to store included sources
+        let includedSources = [];
+        for (let i = 0; i < this.sourcePrefs.length; i++) {
+          //check if its set to be included
+          if (this.sourcePrefs[i].pref) {
+            //add to included array
+            includedSources.push(this.sourcePrefs[i].name);
           }
         }
         //loop reads through each card
-        for (let i = 0; i < deck.length; i++) {
-          let card = deck[i];
+        for (let i = 0; i < this.fullDeck.length; i++) {
+          let card = this.fullDeck[i];
           //check that the current card fulfills all specifications
           if (
-            this.sources.includes(card.source) &&
+            includedSources.includes(card.source) &&
             this.minQuality <= card.quality &&
             this.maxQuality >= card.quality &&
             this.minIntimacy <= card.intimacy &&
@@ -197,7 +179,9 @@
           }
         }
         //cards are correct; now shuffle
-        this.shuffleDeck();
+        if (this.shuffle) {
+          this.shuffleDeck();
+        }
       },
       shuffleDeck() {
         let currentIndex = this.filteredDeck.length,
@@ -214,12 +198,19 @@
           ];
         }
       },
-      flip() {
+      fwd() {
         //increment the index or go back to 0 if we're at the end of the deck
         if (this.index < this.filteredDeck.length - 1) {
           this.index++;
         } else {
           this.index = 0;
+        }
+      },
+      back() {
+        if (this.index === 0) {
+          this.index = this.filteredDeck.length - 1;
+        } else {
+          this.index--;
         }
       },
       overlap(array1, array2) {
@@ -234,13 +225,46 @@
         //otherwise, they don't
         return false;
       },
-      updateTagPref(tagName) {
-        if (this.tagPrefs[tagName] === 2) {
-          this.tagPrefs[tagName] = 0;
-        } else {
-          this.tagPrefs[tagName]++;
+      startAskhole() {
+        for (let i = 0; i < this.sourcePrefs.length; i++) {
+          this.sourcePrefs[i].pref = this.sourcePrefs[i].name === "askhole";
         }
-        console.log(this.tagPrefs);
+        for (let i = 0; i < this.tagPrefs.length; i++) {
+          this.tagPrefs[i].pref = 1;
+        }
+        this.minQuality = 1;
+        this.maxQuality = 5;
+        this.minIntimacy = 1;
+        this.maxIntimacy = 5;
+        this.start();
+      },
+      start36Questions() {
+        for (let i = 0; i < this.sourcePrefs.length; i++) {
+          this.sourcePrefs[i].pref =
+            this.sourcePrefs[i].name === "36 questions to fall in love";
+        }
+        for (let i = 0; i < this.tagPrefs.length; i++) {
+          this.tagPrefs[i].pref = 1;
+        }
+        this.minQuality = 1;
+        this.maxQuality = 5;
+        this.minIntimacy = 1;
+        this.maxIntimacy = 5;
+        this.shuffle = false;
+        this.start();
+      },
+      startRachelFavs() {
+        for (let i = 0; i < this.sourcePrefs.length; i++) {
+          this.sourcePrefs[i].pref = 1;
+        }
+        for (let i = 0; i < this.tagPrefs.length; i++) {
+          this.tagPrefs[i].pref = 1;
+        }
+        this.minQuality = 4;
+        this.maxQuality = 5;
+        this.minIntimacy = 1;
+        this.maxIntimacy = 5;
+        this.start();
       },
     },
   }).mount("#app");

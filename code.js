@@ -1,9 +1,23 @@
 //import questions from csv file
-export const deck = [];
+const deck = [];
+let tagPrefs = [];
+let sourcePrefs = [];
+/*
 fetch("questions.csv").then((resp) => {
   resp.text().then(parseCSV);
 });
 
+/*async*/ export function loadDeckAndPrefs(txt) {
+  //split text into array of strings representing cards
+  const cards = txt.split("\n");
+  //add each card to the deck
+  for (let i = 1; i < cards.length; i++) {
+    deck.push(buildCard(cards[i]));
+  }
+  return [deck, tagPrefs, sourcePrefs];
+}
+
+/*
 //function takes response from fetch and reads CSV into deck
 function parseCSV(txt) {
   //split text into array of strings representing cards
@@ -13,34 +27,86 @@ function parseCSV(txt) {
     deck.push(buildCard(cards[i]));
   }
 }
+*/
 
 // fxn takes string representing card & array of attribute labels and returns card object
 function buildCard(cardStr) {
   let cardObj = {};
-  let attributes;
-  //add the question to the deck
-  if (cardStr[0] === '"') {
-    //handling special case with commas in question (there are actually more edge cases to handle, fix later)
-    const qEnd = cardStr.indexOf('?",');
-    //add the question to the card object
-    cardObj.question = cardStr.slice(1, qEnd + 1);
-    //build array of all other attributes
-    attributes = cardStr.slice(qEnd + 3).split(",");
-  } else {
-    const qEnd = cardStr.indexOf("?,");
-    //add the question to the card object
-    cardObj.question = cardStr.slice(0, qEnd + 1);
-    //build array of all other attributes
-    attributes = cardStr.slice(qEnd + 2).split(",");
-  }
+  console.log("results of findQuestion:", findQuestion(cardStr));
+  let cardInfo = findQuestion(cardStr);
+  console.log("results of findQuestion in cardInfo:", cardInfo);
+  let attributes = cardInfo[1];
+  let question = cardInfo[0];
+  console.log(question, attributes);
+  //add the question to the card object
+  cardObj["question"] = question;
   //add each of these attributes to the card object with column labels as keys
   cardObj.source = attributes[0];
+  //add any not-yet-seen source to the tagPrefs object
+  if (!optionAdded(cardObj.source, sourcePrefs)) {
+    sourcePrefs.push({ name: cardObj.source, pref: true });
+  }
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
-  cardObj.multiplePlayers = parseInt(attributes[4].trimEnd());
+  //add any not-yet-seen tag to the tagPrefs object
+  for (let i = 0; i < cardObj.tags.length; i++) {
+    cardObj.tags[i] = cardObj.tags[i].trim();
+    if (!optionAdded(cardObj.tags[i], tagPrefs)) {
+      if (cardObj.tags[i] === "2 player only") {
+        tagPrefs.push({ name: cardObj.tags[i], pref: 0 });
+      } else {
+        tagPrefs.push({ name: cardObj.tags[i], pref: 1 });
+      }
+    }
+  }
   //return the complete card object
   return cardObj;
+}
+
+//checks if a tag has already been added to tagPrefs
+function optionAdded(opt, options) {
+  for (let i = 0; i < options.length; i++) {
+    if (options[i].name === opt) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function findQuestion(cardStr) {
+  if (cardStr[0] === '"') {
+    let i = 1;
+    let quotesClose = false;
+    while (i < cardStr.length) {
+      if (cardStr[i] === '"') {
+        quotesClose = !quotesClose;
+        if (quotesClose && cardStr[i + 1] === ",") {
+          console.log(
+            "question with commas",
+            cardStr.slice(1, i),
+            cardStr.slice(i + 2).split(",")
+          );
+          return [
+            cardStr.slice(1, i),
+            cardStr
+              .slice(i + 2)
+              .trimEnd()
+              .split(","),
+          ];
+        }
+      }
+      i++;
+    }
+  } else {
+    return [
+      cardStr.slice(0, cardStr.indexOf(",")),
+      cardStr
+        .slice(cardStr.indexOf(",") + 1)
+        .trimEnd()
+        .split(","),
+    ];
+  }
 }
 
 /*
