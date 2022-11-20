@@ -3,6 +3,10 @@ body {
   margin: 0;
   padding: 2em;
   --font: "FreeMono", monospace;
+  --darkpurple: #4f0b76;
+  --lightpurple: #8b2d74;
+  --red: #c74956;
+  --orange: ;
 }
 
 body {
@@ -13,16 +17,15 @@ body {
 
 .btn {
   color: black;
-  background: #9fc5e8;
-  padding: 10px 40px;
+  background: white;
+  padding: 8px 30px;
   font-family: var(--font);
-  font-size: 16px;
   text-decoration: none;
   transition: background 0.5s;
   border: 2px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
   cursor: pointer;
-  margin: auto;
+  margin: 20px 50px 20px 50px;
 }
 
 .preset {
@@ -37,7 +40,7 @@ body {
 
 #presets {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   padding: 2em 2em 2em 2em;
 }
 
@@ -61,6 +64,7 @@ input[type="number"] {
 
 #settings {
   display: flex;
+  flex-direction: column;
   background-image: url("screenshot.png");
 }
 

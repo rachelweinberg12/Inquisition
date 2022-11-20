@@ -24,6 +24,17 @@
       <h3>To get started, fill in your play preferences or select a preset.</h3>
       <!-- Show start page -->
       <div id="settings">
+        <div id="presets">
+          <!--presets-->
+          <button class="preset" @click="startAskhole">Regular Askhole</button>
+          <button class="preset" @click="start36Questions">
+            36 Questions to Fall In Love
+          </button>
+          <button class="preset" @click="startRachelFavs">
+            Rachel's Favorites
+          </button>
+        </div>
+
         <div id="form">
           <!-- Sources input -->
           <p>Which sources do you want to pull from to create your deck?</p>
@@ -60,21 +71,14 @@
             :key="item.name"
           ></tag-item>
           <br />
-        </div>
-        <div id="presets">
-          <!--presets-->
-          <button class="preset" @click="startAskhole">Regular Askhole</button>
-          <button class="preset" @click="start36Questions">
-            36 Questions to Fall In Love
-          </button>
-          <button class="preset" @click="startRachelFavs">
-            Rachel's Favorites
-          </button>
+          <br />
+          <!--reset & start buttons-->
+          <button class="btn" @click="resetPrefs">Clear Form</button>
+          <button class="btn" @click="start">Get Started!</button>
+          <br />
         </div>
       </div>
       <br />
-      <!--start button-->
-      <button class="btn" @click="start">Get Started!</button>
     </div>
     <div v-else>
       <!--card display-->
@@ -101,7 +105,6 @@
     data() {
       return {
         filteredDeck: [],
-        mode: "start",
         index: -1,
         minQuality: 1,
         maxQuality: 5,
@@ -111,6 +114,7 @@
         sourcePrefs: [],
         fullDeck: [],
         shuffle: true,
+        mutliPlayer: true,
       };
     },
     async created() {
@@ -118,7 +122,6 @@
       const deckStr = await response.text();
       [this.fullDeck, this.tagPrefs, this.sourcePrefs] =
         loadDeckAndPrefs(deckStr);
-      console.log(this.sourcePrefs);
     },
     methods: {
       start() {
@@ -171,6 +174,7 @@
             this.maxQuality >= card.quality &&
             this.minIntimacy <= card.intimacy &&
             this.maxIntimacy >= card.intimacy &&
+            (!this.multiPlayer || card.multiPlayer) &&
             this.overlap(includedTags, card.tags) &&
             !this.overlap(excludedTags, card.tags)
           ) {
@@ -225,6 +229,20 @@
         //otherwise, they don't
         return false;
       },
+      resetPrefs() {
+        for (let i = 0; i < this.sourcePrefs.length; i++) {
+          this.sourcePrefs[i].pref = true;
+        }
+        for (let i = 0; i < this.tagPrefs.length; i++) {
+          this.tagPrefs[i].pref = 1;
+        }
+        this.minQuality = 1;
+        this.maxQuality = 5;
+        this.minIntimacy = 1;
+        this.maxIntimacy = 5;
+        this.multiPlayer = true;
+        this.shuffle = true;
+      },
       startAskhole() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {
           this.sourcePrefs[i].pref = this.sourcePrefs[i].name === "askhole";
@@ -251,6 +269,7 @@
         this.minIntimacy = 1;
         this.maxIntimacy = 5;
         this.shuffle = false;
+        this.multiPlayer = false;
         this.start();
       },
       startRachelFavs() {

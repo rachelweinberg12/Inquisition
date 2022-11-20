@@ -32,12 +32,9 @@ function parseCSV(txt) {
 // fxn takes string representing card & array of attribute labels and returns card object
 function buildCard(cardStr) {
   let cardObj = {};
-  console.log("results of findQuestion:", findQuestion(cardStr));
   let cardInfo = findQuestion(cardStr);
-  console.log("results of findQuestion in cardInfo:", cardInfo);
   let attributes = cardInfo[1];
   let question = cardInfo[0];
-  console.log(question, attributes);
   //add the question to the card object
   cardObj["question"] = question;
   //add each of these attributes to the card object with column labels as keys
@@ -49,6 +46,7 @@ function buildCard(cardStr) {
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
+  cardObj.multiPlayer = attributes[4];
   //add any not-yet-seen tag to the tagPrefs object
   for (let i = 0; i < cardObj.tags.length; i++) {
     cardObj.tags[i] = cardObj.tags[i].trim();
@@ -77,16 +75,12 @@ function optionAdded(opt, options) {
 function findQuestion(cardStr) {
   if (cardStr[0] === '"') {
     let i = 1;
-    let quotesClose = false;
     while (i < cardStr.length) {
       if (cardStr[i] === '"') {
-        quotesClose = !quotesClose;
-        if (quotesClose && cardStr[i + 1] === ",") {
-          console.log(
-            "question with commas",
-            cardStr.slice(1, i),
-            cardStr.slice(i + 2).split(",")
-          );
+        if (cardStr[i + 1] === '"') {
+          cardStr =
+            cardStr.substring(0, i) + cardStr.substring(i + 1, cardStr.length);
+        } else {
           return [
             cardStr.slice(1, i),
             cardStr
