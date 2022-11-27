@@ -166,7 +166,7 @@ input[type="number"] {
   font-family: var(--font);
   color: black;
   padding: 2em;
-  margin: 5em auto 0em;
+  margin: 3em auto 0em;
   width: 15em;
   height: 12em;
   box-shadow: 2px 2px 5px black;
@@ -216,15 +216,15 @@ input[type="number"] {
   border: 3px solid black;
   border-radius: 50px;
   cursor: pointer;
-  margin: 2em 5em;
+  margin: 2em 10em;
   background-image: url("arrow1.png");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
   top: 1.45em;
   right: 1.45em;
-  width: 5em;
-  height: 5em;
+  width: 6em;
+  height: 6em;
 }
 
 #previous-question {
