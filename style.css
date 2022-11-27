@@ -129,10 +129,11 @@ input[type="number"] {
 .card {
   border: 3px solid black;
   background-color: #9fc5e8;
-  font-size: x-large;
+  font-size: xx-large;
   font-family: var(--font);
+  color: black;
   padding: 2em;
-  margin: 8em auto 0em;
+  margin: 5em auto 0em;
   width: 15em;
   height: 12em;
   box-shadow: 2px 2px 5px black;
@@ -144,7 +145,7 @@ input[type="number"] {
 
 #feature-display {
   display: flex;
-  font-size: x-small;
+  font-size: small;
   position: absolute;
   bottom: 1%;
 }
