@@ -25,7 +25,6 @@
       <h6 id="author">by rachel</h6>
     </div>
     <div v-if="index === -1">
-      <h3>To get started, fill in your play preferences or select a preset.</h3>
       <!-- Show start page -->
       <div id="settings">
         <div id="presets">
@@ -40,8 +39,28 @@
         </div>
 
         <div id="form">
+          <div id="key">
+            <div class="key-item">
+              <p class="key-color" id="include-color"></p>
+              <p>include</p>
+            </div>
+            <div
+              class="key-item"
+              title="some cards have multiple tags. If a card has only ignored (or excluded) tags, it won't be added to your deck. If it has ignored and included tags, it will be added."
+            >
+              <p class="key-color" id="ignore-color"></p>
+              <p>ignore</p>
+            </div>
+            <div class="key-item">
+              <p class="key-color" id="exclude-color"></p>
+              <p>exclude</p>
+            </div>
+          </div>
           <!-- Sources input -->
-          <p>Which sources do you want to pull from to create your deck?</p>
+          <p>
+            Which <strong>sources</strong> would you like to include in your
+            deck?
+          </p>
 
           <source-item
             v-for="item in sourcePrefs"
@@ -52,8 +71,7 @@
           <br />
           <!--quality input-->
           <p>
-            What range of quality (according to Rachel) would you like to
-            include? (1-5)
+            What range of <strong>quality</strong> would you like to include?
           </p>
           <span>
             <input type="number" max="5" min="1" v-model="minQuality" />
@@ -61,14 +79,19 @@
             <input type="number" max="5" min="1" v-model="maxQuality" />
           </span>
           <!-- intimacy input -->
-          <p>What range of intimacy are you going for? (1-5)</p>
+          <p>
+            What range of <strong>intimacy</strong> would you like to include?
+          </p>
           <span>
             <input type="number" max="5" min="1" v-model="minIntimacy" />
             -
             <input type="number" max="5" min="1" v-model="maxIntimacy" />
           </span>
           <!-- tags to include input -->
-          <p>What types of questions would you like to include?</p>
+          <p>
+            What <strong>categories</strong> of questions would you like to
+            include?
+          </p>
           <tag-item
             v-for="item in tagPrefs"
             :tag="item"
@@ -86,9 +109,23 @@
     </div>
     <div v-else>
       <!--card display-->
-      <div class="card">
-        <p><strong>{{ filteredDeck[index].question }}</strong></p>
-      </div>
+      <button class="card" @click="fwd">
+        <strong>{{ filteredDeck[index].question }}</strong>
+        <div id="feature-display">
+          <p>source = {{ filteredDeck[index].source }}&nbsp&nbsp&nbsp&nbsp</p>
+          <p>
+            intimacy = {{ filteredDeck[index].intimacy }}&nbsp&nbsp&nbsp&nbsp
+          </p>
+          <p>quality = {{ filteredDeck[index].quality }}&nbsp&nbsp&nbsp&nbsp</p>
+          <p>
+            tags =
+            <span v-for="(item, index) in filteredDeck[index].tags">
+              <span v-if="index != 0">&nbsp&</span>
+              {{item}}&nbsp</span
+            >
+          </p>
+        </div>
+      </button>
       <button class="flip" id="previous-question" @click="back"></button>
       <button class="flip" id="next-question" @click="fwd"></button>
     </div>
