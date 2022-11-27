@@ -54,6 +54,7 @@ body {
   cursor: pointer;
   font-family: var(--font);
   font-size: medium;
+  color: black;
   width: 10em;
   height: 10em;
 }
