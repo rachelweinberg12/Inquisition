@@ -1,18 +1,36 @@
 html,
 body {
   margin: 0;
-  padding: 2em;
-  --font: "FreeMono", monospace;
-  --darkpurple: #4f0b76;
-  --lightpurple: #8b2d74;
-  --red: #c74956;
-  --orange: ;
+  --font: fantasy;
+  font-size: medium;
 }
 
 body {
   font-family: var(--font);
   font-weight: 100;
   text-align: center;
+  background-image: url("Inquisition3.webp");
+  background-size: cover;
+}
+
+#header {
+  color: black;
+  background: #ffc823;
+  box-shadow: 1px 1px 3px black;
+  font-size: 1.2rem;
+  display: flex;
+  margin: 0 0 3em;
+  padding: 0;
+}
+
+#name {
+  padding: 0 1em;
+  font-family: "Luminari", fantasy;
+}
+
+#author {
+  padding: 1.2em 1em;
+  font-style: italic;
 }
 
 .btn {
@@ -25,15 +43,17 @@ body {
   border: 2px solid black;
   border-radius: 20px;
   cursor: pointer;
-  margin: 20px 50px 20px 50px;
+  margin: 20px 50px;
+  font-size: medium;
 }
 
 .preset {
   border: 2px solid black;
   background-color: #9fc5e8;
-  margin: 2em 2em 2em 2em;
+  margin: 2em 2em;
   cursor: pointer;
   font-family: var(--font);
+  font-size: medium;
   width: 10em;
   height: 10em;
 }
@@ -65,7 +85,6 @@ input[type="number"] {
 #settings {
   display: flex;
   flex-direction: column;
-  background-image: url("screenshot.png");
 }
 
 #form {
@@ -76,12 +95,13 @@ input[type="number"] {
 }
 
 .card {
-  border: 2px solid black;
+  border: 3px solid black;
   background-color: #9fc5e8;
-  padding: 2em 2em 2em 2em;
+  font-size: x-large;
+  padding: 2em;
   margin: auto;
-  width: 20em;
-  height: 15em;
+  width: 15em;
+  height: 12em;
   box-shadow: 2px 2px 5px black;
   display: grid;
   place-items: center;
@@ -100,6 +120,7 @@ input[type="number"] {
   cursor: pointer;
   margin: 3px 3px 3px;
   box-shadow: 1px 1px 3px black;
+  font-size: medium;
 }
 
 .include {
@@ -114,14 +135,23 @@ input[type="number"] {
 
 .flip {
   color: black;
-  background: #9fc5e8;
-  padding: 5px 5px;
-  font-family: var(--font);
-  font-size: 16px;
+  background: black;
   text-decoration: none;
   transition: background 0.5s;
-  border: 2px solid black;
-  border-radius: 10px;
+  border: 3px solid black;
+  border-radius: 50px;
   cursor: pointer;
-  margin: 2em 2em 2em 2em;
+  margin: 2em 5em;
+  background-image: url("arrow1.png");
+  background-position: 50% 50%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: 1.45em;
+  right: 1.45em;
+  width: 5em;
+  height: 5em;
+}
+
+#previous-question {
+  transform: rotate(180deg);
 }

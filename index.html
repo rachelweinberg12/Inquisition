@@ -20,6 +20,10 @@
 
 <body>
   <div id="app">
+    <div id="header">
+      <h1 id="name">Inquisition</h1>
+      <h6 id="author">by rachel</h6>
+    </div>
     <div v-if="index === -1">
       <h3>To get started, fill in your play preferences or select a preset.</h3>
       <!-- Show start page -->
@@ -83,10 +87,10 @@
     <div v-else>
       <!--card display-->
       <div class="card">
-        <p>{{ filteredDeck[index].question }}</p>
+        <p><strong>{{ filteredDeck[index].question }}</strong></p>
       </div>
-      <button class="flip" @click="back">&lt;</button>
-      <button class="flip" @click="fwd">></button>
+      <button class="flip" id="previous-question" @click="back"></button>
+      <button class="flip" id="next-question" @click="fwd"></button>
     </div>
   </div>
 </body>
