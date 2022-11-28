@@ -21,103 +21,96 @@
 <body>
   <div id="app">
     <div id="header">
-      <h1 id="name">Inquisition</h1>
+      <button id="home" @click="reset">Inquisition</button>
       <h6 id="author">by rachel</h6>
     </div>
-    <div v-if="index === -1">
+    <div v-if="index === -1" id="setup-display">
       <!-- Show start page -->
-      <div id="settings">
-        <div id="info">
-          <p id="info-icon"><strong>i</strong></p>
-          <p>
-            Inquisition is a compilation of bonding questions from online
-            sources and friends. It includes innocent ice breakers, deep
-            personal inquiries, cornering controversial questions, and more. You
-            can select a curated deck or build your own using the form below.
-          </p>
-        </div>
-
-        <div id="presets">
-          <!--presets-->
-          <button class="preset" @click="startAskhole">Regular Askhole</button>
-          <button class="preset" @click="start36Questions">
-            36 Questions to Fall In Love
-          </button>
-          <button class="preset" @click="startRachelFavs">
-            Rachel's Favorites
-          </button>
-        </div>
-
-        <div id="form">
-          <div id="key">
-            <div class="key-item">
-              <p class="key-color" id="include-color"></p>
-              <p>include</p>
-            </div>
-            <div
-              class="key-item"
-              title="some cards have multiple tags. If a card has only ignored (or excluded) tags, it won't be added to your deck. If it has ignored and included tags, it will be added."
-            >
-              <p class="key-color" id="ignore-color"></p>
-              <p>ignore</p>
-            </div>
-            <div class="key-item">
-              <p class="key-color" id="exclude-color"></p>
-              <p>exclude</p>
-            </div>
-          </div>
-          <!-- Sources input -->
-          <p>
-            Which <strong>sources</strong> would you like to include in your
-            deck?
-          </p>
-
-          <source-item
-            v-for="item in sourcePrefs"
-            :source="item"
-            :key="item.name"
-          ></source-item>
-
-          <br />
-          <!--quality input-->
-          <p>
-            What range of <strong>quality</strong> would you like to include?
-          </p>
-          <span>
-            <input type="number" max="5" min="1" v-model="minQuality" />
-            -
-            <input type="number" max="5" min="1" v-model="maxQuality" />
-          </span>
-          <!-- intimacy input -->
-          <p>
-            What range of <strong>intimacy</strong> would you like to include?
-          </p>
-          <span>
-            <input type="number" max="5" min="1" v-model="minIntimacy" />
-            -
-            <input type="number" max="5" min="1" v-model="maxIntimacy" />
-          </span>
-          <!-- tags to include input -->
-          <p>
-            What <strong>categories</strong> of questions would you like to
-            include?
-          </p>
-          <tag-item
-            v-for="item in tagPrefs"
-            :tag="item"
-            :key="item.name"
-          ></tag-item>
-          <br />
-          <br />
-          <!--reset & start buttons-->
-          <button class="btn" @click="resetPrefs">Clear Form</button>
-          <button class="btn" @click="start">Get Started!</button>
-          <br />
-        </div>
+      <div id="info">
+        <p id="info-icon"><strong>i</strong></p>
+        <p>
+          Inquisition is a compilation of bonding questions from online sources
+          and friends. It includes innocent ice breakers, deep personal
+          inquiries, cornering controversial questions, and more. You can select
+          a curated deck or build your own using the form below.
+        </p>
       </div>
-      <br />
+
+      <div id="presets">
+        <!--presets-->
+        <button class="preset" @click="startAskhole">Regular Askhole</button>
+        <button class="preset" @click="start36Questions">
+          36 Questions to Fall In Love
+        </button>
+        <button class="preset" @click="startRachelFavs">
+          Rachel's Favorites
+        </button>
+      </div>
+
+      <div id="form">
+        <div id="key">
+          <div class="key-item">
+            <p class="key-color" id="include-color"></p>
+            <p>include&nbsp&nbsp&nbsp&nbsp</p>
+          </div>
+          <div
+            class="key-item"
+            title="some cards have multiple tags. If a card has only ignored (or excluded) tags, it won't be added to your deck. If it has ignored and included tags, it will be added."
+          >
+            <p class="key-color" id="ignore-color"></p>
+            <p>ignore&nbsp&nbsp&nbsp&nbsp</p>
+          </div>
+          <div class="key-item">
+            <p class="key-color" id="exclude-color"></p>
+            <p>exclude</p>
+          </div>
+        </div>
+        <!-- Sources input -->
+        <p>
+          Which <strong>sources</strong> would you like to include in your deck?
+        </p>
+
+        <source-item
+          v-for="item in sourcePrefs"
+          :source="item"
+          :key="item.name"
+        ></source-item>
+
+        <br />
+        <!--quality input-->
+        <p>What range of <strong>quality</strong> would you like to include?</p>
+        <span>
+          <input type="number" max="5" min="1" v-model="minQuality" />
+          -
+          <input type="number" max="5" min="1" v-model="maxQuality" />
+        </span>
+        <!-- intimacy input -->
+        <p>
+          What range of <strong>intimacy</strong> would you like to include?
+        </p>
+        <span>
+          <input type="number" max="5" min="1" v-model="minIntimacy" />
+          -
+          <input type="number" max="5" min="1" v-model="maxIntimacy" />
+        </span>
+        <!-- tags to include input -->
+        <p>
+          What <strong>categories</strong> of questions would you like to
+          include?
+        </p>
+        <tag-item
+          v-for="item in tagPrefs"
+          :tag="item"
+          :key="item.name"
+        ></tag-item>
+        <br />
+        <br />
+        <!--reset & start buttons-->
+        <button class="form-button" @click="reset">Clear Form</button>
+        <button class="form-button" @click="start">Get Started!</button>
+      </div>
     </div>
-    <div v-else>
+    <div v-else id="card-display">
       <!--card display-->
       <button class="card" @click="fwd">
         <strong>{{ filteredDeck[index].question }}</strong>
@@ -136,8 +129,14 @@
           </p>
         </div>
       </button>
-      <button class="flip" id="previous-question" @click="back"></button>
-      <button class="flip" id="next-question" @click="fwd"></button>
+      <div id="arrow-buttons">
+        <button
+          class="arrow-button"
+          id="previous-question"
+          @click="back"
+        ></button>
+        <button class="arrow-button" id="next-question" @click="fwd"></button>
+      </div>
     </div>
   </div>
 </body>
@@ -280,7 +279,7 @@
         //otherwise, they don't
         return false;
       },
-      resetPrefs() {
+      reset() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {
           this.sourcePrefs[i].pref = true;
         }
@@ -293,6 +292,7 @@
         this.maxIntimacy = 5;
         this.multiPlayer = true;
         this.shuffle = true;
+        this.index = -1;
       },
       startAskhole() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {

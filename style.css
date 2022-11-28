@@ -1,48 +1,27 @@
+/* GENERAL RULES */
 html,
 body {
   margin: 0;
   --font: fantasy;
+  --light-blue: #9fc5e8;
+  --light-yellow: #ffe599;
+  --dark-yellow: #ffc823;
   font-size: medium;
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 body {
   font-family: var(--font);
   font-weight: 100;
   text-align: center;
-  background-image: url("Inquisition3.webp");
-  background-size: cover;
 }
 
-#header {
-  color: black;
-  background: #ffc823;
-  box-shadow: 1px 1px 3px black;
-  font-size: 1.2rem;
-  display: flex;
-  margin: 0 0 2em;
-  padding: 0;
-}
-
-#name {
-  padding: 0 1em;
-  font-family: "Luminari", fantasy;
-}
-
-#author {
-  padding: 1.2em 1em;
-  font-style: italic;
-}
-
-.btn {
-  color: black;
-  background: white;
-  padding: 8px 30px;
-  font-family: var(--font);
-  transition: background 0.5s;
-  border: 2px solid black;
-  border-radius: 20px;
+button {
   cursor: pointer;
-  margin: 0.5em 5em;
+  font-family: var(--font);
   font-size: medium;
 }
 
@@ -65,20 +44,51 @@ input[type="number"] {
   font-family: var(--font);
 }
 
-#settings {
+/* HEADER */
+
+#header {
+  color: black;
+  background: var(--dark-yellow);
+  box-shadow: 1px 1px 3px black;
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+#home {
+  padding: 0 1em;
+  font-family: "Luminari", fantasy;
+  font-size: xx-large;
+  background: transparent;
+  border: none;
+}
+
+#author {
+  padding: 1.2em 1em;
+  font-style: italic;
+}
+
+/***FRONT PAGE DISPLAY***/
+
+#setup-display {
   display: flex;
   flex-direction: column;
   max-width: 900px;
   margin: auto;
+  padding: 0em 0em 3em;
 }
 
+/*INFO PARAGRAPH*/
+
 #info {
-  background-color: #9fc5e8;
-  font-family: var(--font);
+  background-color: var(--light-blue);
   border: 2px solid black;
   padding: 0.5em 3em;
-  margin: 1em 3em;
+  margin: 10em 3em 1em;
   position: relative;
+  z-index: 0;
 }
 
 #info-icon {
@@ -90,27 +100,26 @@ input[type="number"] {
   border: 1.4px solid black;
   border-radius: 50px;
   background-color: black;
-  color: #9fc5e8;
+  color: var(--light-blue);
   font-family: "Luminari", fantasy;
 }
+
+/*PRESET BUTTONS*/
 
 #presets {
   display: flex;
   justify-content: center;
   padding: 2em 2em 2em 2em;
   border: 2px solid black;
-  background-color: #9fc5e8;
+  background-color: var(--light-blue);
   padding: 1em 3em;
   margin: 1em 3em;
 }
 
 .preset {
   border: 2px solid black;
-  background-color: #ffc823;
+  background-color: var(--dark-yellow);
   margin: 0em 3em;
-  cursor: pointer;
-  font-family: var(--font);
-  font-size: medium;
   box-shadow: 1px 1px 3px black;
   color: black;
   width: 10em;
@@ -118,12 +127,26 @@ input[type="number"] {
   border-radius: 10px;
 }
 
+/* CUSTOM SETTING FORM */
 #form {
   border: 2px solid black;
-  background-color: #9fc5e8;
+  background-color: var(--light-blue);
   padding: 1em 2em 2em 2em;
   margin: 1em 3em;
 }
+
+.form-button {
+  color: black;
+  background: white;
+  padding: 8px 30px;
+  font-family: var(--font);
+  transition: background 0.5s;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 0.5em 5em;
+}
+
+/*key on the top of the form*/
 
 #key {
   display: flex;
@@ -140,35 +163,64 @@ input[type="number"] {
   width: 1.2em;
   box-shadow: 1px 1px 3px black;
   border-radius: 8px;
-  margin: 1em 1em 1em 3em;
+  margin: 1em;
 }
 
 #include-color {
-  background-color: #ffc823;
+  background-color: var(--dark-yellow);
 }
 
 #ignore-color {
-  background-color: #ffe599;
+  background-color: var(--light-yellow);
 }
 
 #exclude-color {
   background-color: gray;
 }
 
+/*tags/sources options display on settings form*/
+.option {
+  color: black;
+  background: var(--light-yellow);
+  padding: 3px 12px;
+  text-decoration: none;
+  transition: background 0.5s;
+  border: 2px solid var(--light-yellow);
+  border-radius: 20px;
+  margin: 3px 3px 3px;
+  box-shadow: 1px 1px 3px black;
+}
+
+.include {
+  background: var(--dark-yellow);
+  border: 2px solid var(--dark-yellow);
+}
+
+.exclude {
+  background: gray;
+  border: 2px solid gray;
+}
+
+/*** CARD PAGE DISPLAY ***/
+
+#card-display {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
 .card {
   border: 3px solid black;
-  background-color: #9fc5e8;
+  background-color: var(--light-blue);
   font-size: xx-large;
-  font-family: var(--font);
   color: black;
   padding: 1em;
-  margin: 3em auto 0em;
+  margin: 8em auto 0em;
   width: 17em;
   height: 12em;
   box-shadow: 2px 2px 5px black;
   display: grid;
   place-items: center;
-  box-sizing: content-box;
   position: relative;
 }
 
@@ -179,48 +231,23 @@ input[type="number"] {
   bottom: 1%;
 }
 
-.option {
-  color: black;
-  background: #ffe599;
-  padding: 3px 12px;
-  font-family: var(--font);
-  text-decoration: none;
+/*flip card buttons*/
+#arrow-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-button {
+  background: transparent;
   transition: background 0.5s;
-  border: 2px solid #ffe599;
-  border-radius: 20px;
-  cursor: pointer;
-  margin: 3px 3px 3px;
-  box-shadow: 1px 1px 3px black;
-  font-size: medium;
-}
-
-.include {
-  background: #ffc823;
-  border: 2px solid #ffc823;
-}
-
-.exclude {
-  background: gray;
-  border: 2px solid gray;
-}
-
-.flip {
-  color: black;
-  background: black;
-  text-decoration: none;
-  transition: background 0.5s;
-  border: 3px solid black;
-  border-radius: 50px;
-  cursor: pointer;
-  margin: 2em 10em;
-  background-image: url("arrow1.png");
+  border: none;
+  margin: 2em 5em;
+  background-image: url("arrow.png");
   background-position: 50% 50%;
   background-size: contain;
   background-repeat: no-repeat;
-  top: 1.45em;
-  right: 1.45em;
-  width: 6em;
-  height: 6em;
+  width: 10em;
+  height: 10em;
 }
 
 #previous-question {
