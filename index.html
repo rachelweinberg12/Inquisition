@@ -22,6 +22,8 @@
     href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cinzel:wght@500&family=Eczar:wght@400;600&family=Fondamento&family=IM+Fell+English:ital@0;1&family=Marcellus&family=Merienda:wght@300;500;700&display=swap"
     rel="stylesheet"
   />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
@@ -117,8 +119,8 @@
       </div>
     </div>
     <div v-else id="card-display">
-      <input @keyup.left="prevCard" />
-      <input @keyup.right="nextCard" />
+      <input @keyup.ArrowLeft="prevCard" />
+      <input @keyup.ArrowRight="nextCard" />
       <!--card display-->
       <button class="card" @click="nextCard">
         {{ filteredDeck[index].question }}

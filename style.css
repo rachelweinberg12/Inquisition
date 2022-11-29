@@ -27,6 +27,7 @@ body {
 button {
   cursor: pointer;
   font-family: var(--font);
+  color: black;
   font-size: large;
   box-shadow: 1px 1px 3px black;
 }
@@ -127,7 +128,6 @@ input[type="number"] {
   border: 2px solid black;
   background-color: var(--dark-yellow);
   margin: 0em 2em;
-  color: black;
   width: 10em;
   height: 7em;
   border-radius: 10px;
@@ -142,7 +142,6 @@ input[type="number"] {
 }
 
 .form-button {
-  color: black;
   background: white;
   padding: 8px 30px;
   transition: background 0.5s;
@@ -186,7 +185,6 @@ input[type="number"] {
 
 /*tags/sources options display on settings form*/
 .option {
-  color: black;
   background: var(--light-yellow);
   padding: 3px 12px;
   text-decoration: none;
@@ -218,7 +216,6 @@ input[type="number"] {
   border: 3px solid black;
   background-color: var(--light-blue);
   font-size: xx-large;
-  color: black;
   padding: 1em;
   margin: 8em auto 0em;
   width: 17em;
