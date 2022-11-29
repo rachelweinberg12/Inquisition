@@ -13,6 +13,10 @@ body {
   background-repeat: no-repeat;
 }
 
+#app {
+  min-height: 100vh;
+}
+
 body {
   font-family: var(--font);
   font-weight: 100;
