@@ -46,16 +46,12 @@ function buildCard(cardStr) {
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
-  cardObj.multiPlayer = attributes[4];
+  cardObj.twoPlayer = !attributes[4];
   //add any not-yet-seen tag to the tagPrefs object
   for (let i = 0; i < cardObj.tags.length; i++) {
     cardObj.tags[i] = cardObj.tags[i].trim();
     if (!optionAdded(cardObj.tags[i], tagPrefs)) {
-      if (cardObj.tags[i] === "2 player only") {
-        tagPrefs.push({ name: cardObj.tags[i], pref: 0 });
-      } else {
-        tagPrefs.push({ name: cardObj.tags[i], pref: 1 });
-      }
+      tagPrefs.push({ name: cardObj.tags[i], pref: 1 });
     }
   }
   //return the complete card object

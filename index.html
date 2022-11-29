@@ -19,43 +19,82 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cinzel:wght@500&family=Eczar:wght@400;600&family=Fondamento&family=IM+Fell+English:ital@0;1&family=Marcellus&family=Merienda:wght@300;500;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Fondamento&display=swap"
     rel="stylesheet"
   />
-
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
 <body>
   <div id="app">
     <div id="header">
-      <button id="home" @click="reset">Inquisition</button>
+      <h1 id="title">Inquisition</h1>
       <h6 id="author">by rachel</h6>
+      <button id="settingsBtn" @click="mode='settings'"></button>
+      <button id="infoBtn" @click="mode='info'"></button>
     </div>
-    <div v-if="index === -1" id="setup-display">
-      <!-- Show start page -->
+    <div class="background-shade" v-show="mode === 'info'">
       <div id="info">
-        <p id="info-icon"><strong>i</strong></p>
-        <p>
-          Inquisition is a compilation of bonding questions from online sources
-          and friends. It includes innocent ice breakers, deep personal
-          inquiries, cornering controversial questions, and more. You can select
-          a curated deck or build your own using the form below.
-        </p>
+        <button class="x-button" @click="mode = 'play'"></button>
+        <strong>Inquisition</strong> is a compilation of bonding questions from
+        online sources and friends. It includes innocent ice breakers, deep
+        personal inquiries, cornering controversial questions, and more. You can
+        select a curated deck or build your own by tapping on the settings icon.
+        <hr />
+        <h3>Where do these questions come from?</h3>
+        <ul>
+          <li>
+            <a href="https://www.askhole.io/"><strong>askhole</strong></a> is a
+            deck of questions by rationalist/twitter influencer/sex worker
+            Aella, and the original inspiration of this website.
+          </li>
+          <li>
+            <strong>austin</strong> is my boyfriend who has a note in his phone
+            of questions he's too afraid to ask people.
+          </li>
+          <li>
+            <a
+              href="https://www.nytimes.com/2015/01/09/style/no-37-big-wedding-or-small.html"
+              ><strong>36 questions to fall in love</strong></a
+            >
+            is a list of 36 questions, originally made popular through the New
+            York Times, which supposedly can make strangers fall in love.
+          </li>
+          <li>
+            <strong>alexandra</strong> is a friend of mine who has her own list
+            of 50 bonding questions.
+          </li>
+          <br />
+          I'm always happy to add more questions, so email me at
+          rachel.weinberg12@gmail.com if you have your own list of interesting
+          questions!
+        </ul>
+        <hr />
+        <h3>How are they scored and categorized?</h3>
+        Just my opinions. I tend to like questions that are clear (rather than
+        leading to discussions about what the questions is even asking),
+        specific (so that people don't spend a long time searching for the ideal
+        answer), and of course controversial/introspective/deep or something.
+        <br />
+        <br />I labelled them really fast so if you have any complaints about my
+        scores and categorizations please let me know, you're likely correct.
+        Also let me know if there's a category or setting that's missing that
+        you think would be useful.
       </div>
-
-      <div id="presets">
-        <!--presets-->
-        <button class="preset" @click="startAskhole">Regular Askhole</button>
-        <button class="preset" @click="start36Questions">
-          36 Questions to Fall In Love
-        </button>
-        <button class="preset" @click="startRachelFavs">
-          Rachel's Favorites
-        </button>
-      </div>
-
-      <div id="form">
+    </div>
+    <div class="background-shade" v-show="mode === 'settings'">
+      <div id="settings">
+        <button class="x-button" @click="mode = 'play'"></button>
+        <!-- Show start page -->
+        <div id="presets">
+          <!--presets-->
+          <button class="preset" @click="askhole">Regular Askhole</button>
+          <button class="preset" @click="thirtySixQuestions">
+            36 Questions to Fall In Love
+          </button>
+          <button class="preset" @click="rachelFavs">Rachel's Favorites</button>
+        </div>
+        <hr />
         <div id="key">
           <div class="key-item">
             <p class="key-color" id="include-color"></p>
@@ -111,30 +150,37 @@
           :tag="item"
           :key="item.name"
         ></tag-item>
-        <br />
-        <br />
+        <!--shuffle & two player check boxes-->
+        <div id="checkboxes">
+          <label class="container">
+            <input type="checkbox" id="shuffle" v-model="shuffle" />
+            <span class="checkmark"></span>shuffle deck
+          </label>
+          <label class="container">
+            <input type="checkbox" id="two-player" v-model="twoPlayer" />
+            <span class="checkmark"></span>include 2-player only cards
+          </label>
+        </div>
         <!--reset & start buttons-->
         <button class="form-button" @click="reset">Clear Form</button>
         <button class="form-button" @click="start">Get Started!</button>
       </div>
     </div>
-    <div v-else id="card-display">
-      <input @keyup.ArrowLeft="prevCard" />
-      <input @keyup.ArrowRight="nextCard" />
+    <div v-if="mode === 'play' && deckFilled" id="card-display">
+      <input @keyup.arrow-left="prevCard" />
+      <input @keyup.arrow-right="nextCard" />
       <!--card display-->
       <button class="card" @click="nextCard">
         {{ filteredDeck[index].question }}
         <div id="feature-display">
-          <p>source = {{ filteredDeck[index].source }}&nbsp&nbsp&nbsp&nbsp</p>
-          <p>
-            intimacy = {{ filteredDeck[index].intimacy }}&nbsp&nbsp&nbsp&nbsp
-          </p>
-          <p>quality = {{ filteredDeck[index].quality }}&nbsp&nbsp&nbsp&nbsp</p>
-          <p>
-            tags =
+          <p class="feature">source: {{ filteredDeck[index].source }}</p>
+          <p class="feature">intimacy: {{ filteredDeck[index].intimacy }}</p>
+          <p class="feature">quality: {{ filteredDeck[index].quality }}</p>
+          <p class="feature">
+            tags:
             <span v-for="(item, index) in filteredDeck[index].tags">
               <span v-if="index != 0">&nbsp&</span>
-              {{item}}&nbsp</span
+              {{item}}</span
             >
           </p>
         </div>
@@ -169,8 +215,10 @@
     data() {
       return {
         filteredDeck: [],
-        index: -1,
-        minQuality: 1,
+        mode: "play",
+        deckFilled: false,
+        index: 0,
+        minQuality: 4,
         maxQuality: 5,
         minIntimacy: 1,
         maxIntimacy: 5,
@@ -178,7 +226,7 @@
         sourcePrefs: [],
         fullDeck: [],
         shuffle: true,
-        mutliPlayer: true,
+        twoPlayer: false,
       };
     },
     async created() {
@@ -186,9 +234,12 @@
       const deckStr = await response.text();
       [this.fullDeck, this.tagPrefs, this.sourcePrefs] =
         loadDeckAndPrefs(deckStr);
+      this.configureDeck();
+      this.deckFilled = true;
     },
     methods: {
       start() {
+        this.index = -1;
         //try building deck based on user preferences
         this.configureDeck();
         //check that the deck actually has cards in it
@@ -202,11 +253,13 @@
           //if it does, game begins
           this.nextCard();
         }
+        this.mode = "play";
       },
       configureDeck() {
         //make arrays to store included and excluded tags
         let excludedTags = [],
           includedTags = [];
+        this.filteredDeck = [];
         //for each tag
         for (let i = 0; i < this.tagPrefs.length; i++) {
           //check if its set to be included
@@ -238,7 +291,7 @@
             this.maxQuality >= card.quality &&
             this.minIntimacy <= card.intimacy &&
             this.maxIntimacy >= card.intimacy &&
-            (!this.multiPlayer || card.multiPlayer) &&
+            (this.twoPlayer || !card.twoPlayer) &&
             this.overlap(includedTags, card.tags) &&
             !this.overlap(excludedTags, card.tags)
           ) {
@@ -304,11 +357,11 @@
         this.maxQuality = 5;
         this.minIntimacy = 1;
         this.maxIntimacy = 5;
-        this.multiPlayer = true;
+        this.twpPlayer = false;
         this.shuffle = true;
         this.index = -1;
       },
-      startAskhole() {
+      askhole() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {
           this.sourcePrefs[i].pref = this.sourcePrefs[i].name === "askhole";
         }
@@ -319,9 +372,10 @@
         this.maxQuality = 5;
         this.minIntimacy = 1;
         this.maxIntimacy = 5;
-        this.start();
+        this.shuffle = true;
+        this.twoPlayer = false;
       },
-      start36Questions() {
+      thirtySixQuestions() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {
           this.sourcePrefs[i].pref =
             this.sourcePrefs[i].name === "36 questions to fall in love";
@@ -334,10 +388,9 @@
         this.minIntimacy = 1;
         this.maxIntimacy = 5;
         this.shuffle = false;
-        this.multiPlayer = false;
-        this.start();
+        this.twoPlayer = true;
       },
-      startRachelFavs() {
+      rachelFavs() {
         for (let i = 0; i < this.sourcePrefs.length; i++) {
           this.sourcePrefs[i].pref = 1;
         }
@@ -348,7 +401,8 @@
         this.maxQuality = 5;
         this.minIntimacy = 1;
         this.maxIntimacy = 5;
-        this.start();
+        this.shuffle = true;
+        this.twoPlayer = false;
       },
     },
   }).mount("#app");
