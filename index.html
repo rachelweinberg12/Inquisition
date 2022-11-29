@@ -16,6 +16,12 @@
 <head>
   <link rel="stylesheet" type="text/css" />
   <link href="style.css" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cinzel:wght@500&family=Eczar:wght@400;600&family=Fondamento&family=IM+Fell+English:ital@0;1&family=Marcellus&family=Merienda:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
 </head>
 
 <body>
@@ -111,9 +117,11 @@
       </div>
     </div>
     <div v-else id="card-display">
+      <input @keyup.left="prevCard" />
+      <input @keyup.right="nextCard" />
       <!--card display-->
-      <button class="card" @click="fwd">
-        <strong>{{ filteredDeck[index].question }}</strong>
+      <button class="card" @click="nextCard">
+        {{ filteredDeck[index].question }}
         <div id="feature-display">
           <p>source = {{ filteredDeck[index].source }}&nbsp&nbsp&nbsp&nbsp</p>
           <p>
@@ -133,9 +141,13 @@
         <button
           class="arrow-button"
           id="previous-question"
-          @click="back"
+          @click="prevCard"
         ></button>
-        <button class="arrow-button" id="next-question" @click="fwd"></button>
+        <button
+          class="arrow-button"
+          id="next-question"
+          @click="nextCard"
+        ></button>
       </div>
     </div>
   </div>
@@ -186,7 +198,7 @@
           return;
         } else {
           //if it does, game begins
-          this.fwd();
+          this.nextCard();
         }
       },
       configureDeck() {
@@ -252,7 +264,7 @@
           ];
         }
       },
-      fwd() {
+      nextCard() {
         //increment the index or go back to 0 if we're at the end of the deck
         if (this.index < this.filteredDeck.length - 1) {
           this.index++;
@@ -260,7 +272,7 @@
           this.index = 0;
         }
       },
-      back() {
+      prevCard() {
         if (this.index === 0) {
           this.index = this.filteredDeck.length - 1;
         } else {
