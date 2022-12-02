@@ -15,12 +15,17 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  position: fixed;
 }
 
 @media (max-width: 768px) {
   html,
   body {
-    font-size: x-large;
+    font-size: medium;
+  }
+
+  p {
+    margin: 0.3em;
   }
 }
 
@@ -69,6 +74,13 @@ hr {
   margin: 1.5em auto;
 }
 
+@media (max-width: 768px) {
+  hr {
+    width: 90%;
+    margin: 0.8em auto;
+  }
+}
+
 a {
   color: rgb(3, 83, 196);
 }
@@ -106,6 +118,7 @@ a {
   background-position: 50% 50%;
   background-size: 100%;
   background-repeat: no-repeat;
+  background-color: black;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -128,18 +141,28 @@ a {
 }
 
 @media (max-width: 768px) {
-  .iconBtn {
-    font-size: medium;
+  #title {
+    font-size: x-large;
+  }
+
+  #author {
+    top: 0.8em;
+    left: 17em;
+    font-size: xx-small;
+  }
+
+  #settingsBtn {
+    top: 0.6em;
+    right: 1em;
+  }
+
+  #infoBtn {
+    top: 0.6em;
+    right: 3.5em;
   }
 }
 
 /* NON-PLAY DISPLAY*/
-@media (max-width: 768px) {
-  .background-shade {
-    position: center;
-    size: cover;
-  }
-}
 
 .background-shade {
   position: absolute;
@@ -157,6 +180,15 @@ a {
   right: 15px;
 }
 
+@media (max-width: 768px) {
+  .xBtn {
+    top: 10px;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+  }
+}
+
 /*NON-PlAY BOXES*/
 .pop-up {
   background-color: var(--light-blue);
@@ -168,20 +200,37 @@ a {
   z-index: 3;
 }
 
+@media (max-width: 768px) {
+  .pop-up {
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+  }
+}
+
 /*INFO BOX*/
 
 #info {
   padding: 4em 3em;
-  @media (max-width: 500px) {
-    padding: 0.5em 1em;
+}
+
+@media (max-width: 768px) {
+  #info {
+    padding: 2.5em 0;
+    font-size: small;
   }
 }
 
 /* SETTINGS*/
 #settings {
   padding: 1em 3em;
-  @media (max-width: 500px) {
-    padding: 0.5em 1em;
+}
+
+@media (max-width: 768px) {
+  #settings {
+    padding: 0;
+    font-size: medium;
   }
 }
 
@@ -192,6 +241,14 @@ a {
   border: 2px solid black;
   border-radius: 20px;
   margin: 0.5em 10%;
+}
+
+@media (max-width: 768px) {
+  .formBtn {
+    font-size: medium;
+    margin: 0.1em 1em;
+    padding: 5px 20px;
+  }
 }
 
 /*Preset buttons*/
@@ -211,6 +268,19 @@ a {
   border-radius: 10px;
 }
 
+@media (max-width: 768px) {
+  #presets {
+    padding: 0.2em 0;
+  }
+
+  .preset {
+    margin: 0em 0.5em;
+    width: 6.5em;
+    height: 5.5em;
+    font-size: small;
+  }
+}
+
 /*key on the top of the form*/
 #key {
   display: flex;
@@ -226,8 +296,7 @@ a {
   height: 20px;
   width: 20px;
   border-radius: 8px;
-  margin: 1em;
-
+  margin: 1em 0.5em;
   box-shadow: 1px 1px 2px black;
 }
 
@@ -243,6 +312,22 @@ a {
   background-color: gray;
 }
 
+@media (max-width: 768px) {
+  #key {
+    font-size: small;
+  }
+
+  .key-item {
+    margin: 0.5em 0.5em;
+  }
+
+  .key-color {
+    height: 15px;
+    width: 15px;
+    margin: 0.5em 0.5em;
+  }
+}
+
 /*tags/sources options display on settings form*/
 .option {
   background: var(--light-yellow);
@@ -251,7 +336,7 @@ a {
   transition: background 0.5s;
   border: 2px solid var(--light-yellow);
   border-radius: 20px;
-  margin: 3px 3px 3px;
+  margin: 3px;
 }
 
 .include {
@@ -264,12 +349,26 @@ a {
   border: 2px solid gray;
 }
 
+@media (max-width: 768px) {
+  .option {
+    font-size: medium;
+    border-radius: 20px;
+    margin: 2px;
+  }
+}
+
 /*checkbox display*/
 
 #checkboxes {
   display: flex;
   justify-content: center;
   margin: 2em;
+}
+
+@media (max-width: 768px) {
+  #checkboxes {
+    margin: 0.5em;
+  }
 }
 
 /* Customize the label (the container) */
@@ -284,6 +383,13 @@ a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    font-size: medium;
+    margin: 0 0.5em;
+  }
 }
 
 /* Hide the browser's default checkbox */
@@ -378,6 +484,18 @@ a {
   margin: 0.5em;
 }
 
+@media (max-width: 768px) {
+  .card {
+    font-size: large;
+    padding: 1em;
+    width: 90%;
+  }
+
+  #feature-display {
+    font-size: xx-small;
+  }
+}
+
 /*flip card buttons*/
 #arrow-buttons {
   display: flex;
@@ -402,6 +520,7 @@ a {
 @media (max-width: 768px) {
   .arrow-button {
     font-size: medium;
+    margin: 2em 2em;
   }
 }
 
