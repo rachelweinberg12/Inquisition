@@ -282,9 +282,9 @@ a {
   }
 
   .preset {
-    margin: 0em 0.5em;
-    width: 6em;
-    height: 5.5em;
+    margin: 0em 3%;
+    width: 27%;
+    height: 6em;
     font-size: medium;
   }
 }
