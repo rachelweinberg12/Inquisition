@@ -24,12 +24,14 @@ body {
   text-align: center;
 }
 
-button {
-  cursor: pointer;
-  font-family: var(--font);
-  color: black;
-  font-size: medium;
-  box-shadow: 1px 1px 3px black;
+@media (min-width: 950px) {
+  button {
+    cursor: pointer;
+    font-family: var(--font);
+    color: black;
+    font-size: medium;
+    box-shadow: 1px 1px 3px black;
+  }
 }
 
 input[type="number"] {
