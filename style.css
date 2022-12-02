@@ -13,7 +13,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   @media (max-width: 500) {
-    font-size: xx-large;
+    font-size: small;
   }
 }
 
