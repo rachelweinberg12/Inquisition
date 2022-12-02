@@ -503,6 +503,7 @@ a {
 
   #feature-display {
     font-size: xx-small;
+    justify-content: center;
   }
 }
 
