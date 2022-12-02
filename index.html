@@ -34,7 +34,7 @@
       <button id="infoBtn" @click="mode='info'"></button>
     </div>
     <div class="background-shade" v-show="mode === 'info'">
-      <div id="info">
+      <div class="pop-up" id="info">
         <button class="x-button" @click="mode = 'play'"></button>
         <strong>Inquisition</strong> is a compilation of bonding questions from
         online sources and friends. It includes innocent ice breakers, deep
@@ -83,7 +83,7 @@
       </div>
     </div>
     <div class="background-shade" v-show="mode === 'settings'">
-      <div id="settings">
+      <div class="pop-up" id="settings">
         <button class="x-button" @click="mode = 'play'"></button>
         <!-- Show start page -->
         <div id="presets">
