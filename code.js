@@ -34,7 +34,7 @@ function buildCard(cardStr) {
   let cardObj = {};
   let cardInfo = findQuestion(cardStr);
   let attributes = cardInfo[1];
-  let question = cardInfo[0];
+  let question = cardInfo[0].toLocaleLowerCase();
   //add the question to the card object
   cardObj["question"] = question;
   //add each of these attributes to the card object with column labels as keys
