@@ -30,12 +30,16 @@
     <div id="header">
       <h1 id="title">Inquisition</h1>
       <h6 id="author">by Rachel</h6>
-      <button id="settingsBtn" @click="mode='settings'"></button>
-      <button id="infoBtn" @click="mode='info'"></button>
+      <button
+        class="iconBtn"
+        id="settingsBtn"
+        @click="mode='settings'"
+      ></button>
+      <button class="iconBtn" id="infoBtn" @click="mode='info'"></button>
     </div>
     <div class="background-shade" v-show="mode === 'info'">
       <div class="pop-up" id="info">
-        <button class="x-button" @click="mode = 'play'"></button>
+        <button class="xBtn iconBtn" @click="mode = 'play'"></button>
         <strong>Inquisition</strong> is a compilation of bonding questions from
         online sources and friends. It includes innocent ice breakers, deep
         personal inquiries, cornering controversial questions, and more. You can
@@ -84,7 +88,7 @@
     </div>
     <div class="background-shade" v-show="mode === 'settings'">
       <div class="pop-up" id="settings">
-        <button class="x-button" @click="mode = 'play'"></button>
+        <button class="xBtn iconBtn" @click="mode = 'play'"></button>
         <!-- Show start page -->
         <div id="presets">
           <!--presets-->
@@ -162,8 +166,8 @@
           </label>
         </div>
         <!--reset & start buttons-->
-        <button class="form-button" @click="reset">Clear Form</button>
-        <button class="form-button" @click="start">Get Started!</button>
+        <button class="formBtn" @click="reset">Clear Form</button>
+        <button class="formBtn" @click="start">Get Started!</button>
       </div>
     </div>
     <div v-if="mode === 'play' && deckFilled" id="card-display">

@@ -76,6 +76,10 @@ a {
   background: transparent;
   border: none;
   box-shadow: none;
+  @media (max-width: 500px) {
+    font-size: xx-large;
+    padding: 0 0.5em;
+  }
 }
 
 #author {
@@ -84,12 +88,11 @@ a {
   left: 30em;
   font-style: italic;
   @media (max-width: 500px) {
-    left: 20em;
+    left: 10em;
   }
 }
 
-#settingsBtn {
-  background-image: url("gear_icon.png");
+.iconBtn {
   background-position: 50% 50%;
   background-size: 100%;
   background-repeat: no-repeat;
@@ -99,25 +102,20 @@ a {
   border-radius: 50%;
   border-color: black;
   position: absolute;
+}
+
+#settingsBtn {
+  background-image: url("gear_icon.png");
   top: 2.5em;
   right: 1.5em;
 }
 
 #infoBtn {
   background-image: url("info_icon.png");
-  background-position: 50% 50%;
   background-size: 105%;
-  background-repeat: no-repeat;
-  background-color: white;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border-color: black;
-  position: absolute;
   top: 2.5em;
   right: 5em;
-  border: 1.4px solid black;
-  border-radius: 50px;
+  background-color: white;
 }
 
 /* NON-PLAY DISPLAY*/
@@ -127,19 +125,15 @@ a {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.416);
   z-index: 2;
+  @media (max-width: 500px) {
+    position: relative;
+  }
 }
 
-.x-button {
+.xBtn {
   background-image: url("x_button.png");
-  background-position: 50% 50%;
   background-size: 140%;
-  background-repeat: no-repeat;
   background-color: white;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  border-color: black;
-  position: absolute;
   top: 15px;
   right: 15px;
 }
@@ -157,6 +151,7 @@ a {
     margin: 0;
     width: 100vw;
     height: 100vw;
+    position: absolute;
   }
 }
 
@@ -164,20 +159,26 @@ a {
 
 #info {
   padding: 4em 3em;
+  @media (max-width: 500px) {
+    padding: 0.5em 1em;
+  }
 }
 
 /* SETTINGS*/
 #settings {
   padding: 1em 3em;
+  @media (max-width: 500px) {
+    padding: 0.5em 1em;
+  }
 }
 
-.form-button {
+.formBtn {
   background: white;
   padding: 8px 30px;
   transition: background 0.5s;
   border: 2px solid black;
   border-radius: 20px;
-  margin: 0.5em 4em;
+  margin: 0.5em 10%;
 }
 
 /*Preset buttons*/
