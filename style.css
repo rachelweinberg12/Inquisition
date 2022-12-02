@@ -494,6 +494,7 @@ a {
 @media (max-width: 768px) {
   .card {
     font-size: large;
+    margin: 5em auto 0em;
     padding: 1em;
     width: 90%;
   }
