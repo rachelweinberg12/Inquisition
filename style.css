@@ -25,7 +25,7 @@ body {
   }
 
   p {
-    margin: 0.3em;
+    margin: 0.5em;
   }
 }
 
@@ -157,13 +157,17 @@ a {
   }
 
   #settingsBtn {
-    top: 0.6em;
-    right: 1em;
+    width: 30px;
+    height: 30px;
+    top: 0.7em;
+    right: 0.8em;
   }
 
   #infoBtn {
-    top: 0.6em;
-    right: 3.5em;
+    width: 30px;
+    height: 30px;
+    top: 0.7em;
+    right: 2.5em;
   }
 }
 
@@ -208,9 +212,10 @@ a {
 @media (max-width: 768px) {
   .pop-up {
     margin: auto;
-    width: 100vw;
-    height: 100vh;
     border: none;
+    width: 100vw;
+    size: cover;
+    box-shadow: 1px 1px 3px black;
   }
 }
 
@@ -222,7 +227,7 @@ a {
 
 @media (max-width: 768px) {
   #info {
-    padding: 2.5em 0;
+    padding: 3em 0;
     font-size: small;
   }
 }
@@ -234,7 +239,7 @@ a {
 
 @media (max-width: 768px) {
   #settings {
-    padding: 0;
+    padding: 3em 0;
     font-size: medium;
   }
 }
@@ -251,7 +256,7 @@ a {
 @media (max-width: 768px) {
   .formBtn {
     font-size: medium;
-    margin: 0.1em 1em;
+    margin: 0.5em 1em;
     padding: 5px 20px;
   }
 }
@@ -280,9 +285,9 @@ a {
 
   .preset {
     margin: 0em 0.5em;
-    width: 6.5em;
+    width: 7em;
     height: 5.5em;
-    font-size: small;
+    font-size: medium;
   }
 }
 
@@ -358,7 +363,6 @@ a {
   .option {
     font-size: medium;
     border-radius: 20px;
-    margin: 2px;
   }
 }
 
@@ -372,7 +376,7 @@ a {
 
 @media (max-width: 768px) {
   #checkboxes {
-    margin: 0.5em;
+    margin: 1em;
   }
 }
 
