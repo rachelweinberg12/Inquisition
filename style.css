@@ -1,4 +1,5 @@
 /* GENERAL RULES */
+
 html,
 body {
   margin: 0;
@@ -8,12 +9,20 @@ body {
   --light-yellow: #ffe599;
   --dark-yellow: #ffc823;
   font-size: medium;
-  background-image: url("background.jpg");
+  background: url("background.jpg") no-repeat center center fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  @media (max-width: 500px) {
-    font-size: xx-large;
+  width: 100%;
+  height: 100%;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    font-size: x-large;
   }
 }
 
@@ -33,6 +42,12 @@ button {
   color: black;
   font-size: medium;
   box-shadow: 1px 1px 3px black;
+}
+
+@media (max-width: 768px) {
+  button {
+    font-size: x-large;
+  }
 }
 
 input[type="number"] {
@@ -83,43 +98,27 @@ a {
 
 #author {
   position: absolute;
-  top: 3.8em;
-  left: 30em;
+  top: 2.2em;
+  left: 23em;
   font-style: italic;
-}
-
-@media (max-width: 500px) {
-  #author {
-    top: 0em;
-    left: 5em;
-  }
+  font-size: small;
 }
 
 .iconBtn {
   background-position: 50% 50%;
   background-size: 100%;
   background-repeat: no-repeat;
-  background-color: black;
   width: 40px;
   height: 40px;
   border-radius: 50%;
   border-color: black;
   position: absolute;
-  @media (max-width: 500px) {
-    width: 50px;
-    height: 50px;
-    border-color: red;
-  }
 }
 
 #settingsBtn {
   background-image: url("gear_icon.png");
   top: 2.7em;
   right: 2em;
-  @media (max-width: 500px) {
-    top: 0.5em;
-    right: 2em;
-  }
 }
 
 #infoBtn {
@@ -128,9 +127,11 @@ a {
   top: 2.7em;
   right: 6em;
   background-color: white;
-  @media (max-width: 500px) {
-    top: 0.5em;
-    right: 6em;
+}
+
+@media (max-width: 768px) {
+  .iconBtn {
+    font-size: medium;
   }
 }
 
@@ -141,9 +142,6 @@ a {
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.416);
   z-index: 2;
-  @media (max-width: 500px) {
-    position: relative;
-  }
 }
 
 .xBtn {
@@ -163,12 +161,6 @@ a {
   box-sizing: content-box;
   position: relative;
   z-index: 3;
-  @media (max-width: 500px) {
-    margin: 0;
-    width: 100vw;
-    height: 100vw;
-    position: absolute;
-  }
 }
 
 /*INFO BOX*/
