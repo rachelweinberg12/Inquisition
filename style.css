@@ -151,23 +151,20 @@ a {
     font-size: xx-small;
   }
 
-  #iconBtn {
-    font-size: x-small;
-  }
-
   #settingsBtn {
     width: 25px;
     height: 25px;
-    top: 0.7em;
-    right: 0.8em;
+    top: 2em;
+    right: 1em;
     font-size: x-small;
   }
 
   #infoBtn {
     width: 25px;
     height: 25px;
-    top: 0.7em;
-    right: 2.5em;
+    top: 2em;
+    right: 4em;
+    font-size: x-small;
   }
 }
 
@@ -193,8 +190,9 @@ a {
   .xBtn {
     top: 10px;
     right: 10px;
-    height: 30px;
-    width: 30px;
+    height: 25px;
+    width: 25px;
+    font-size: x-small;
   }
 }
 
