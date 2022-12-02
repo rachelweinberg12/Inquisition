@@ -13,7 +13,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   @media (max-width: 500) {
-    font-size: x-large;
+    font-size: xx-large;
   }
 }
 
@@ -90,8 +90,8 @@ a {
   left: 30em;
   font-style: italic;
   @media (max-width: 500px) {
-    top: 15%;
-    left: 7em;
+    top: 0.7em;
+    left: 5em;
   }
 }
 
@@ -116,7 +116,7 @@ a {
   top: 2.7em;
   right: 2em;
   @media (max-width: 500) {
-    top: 1em;
+    top: 0.5em;
     right: 2em;
   }
 }
@@ -128,7 +128,7 @@ a {
   right: 6em;
   background-color: white;
   @media (max-width: 500) {
-    top: 1em;
+    top: 0.5em;
     right: 6em;
   }
 }
