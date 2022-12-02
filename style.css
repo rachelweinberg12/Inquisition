@@ -15,7 +15,7 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  position: fixed;
+  position: absolute;
 }
 
 @media (max-width: 768px) {
@@ -149,6 +149,11 @@ a {
     top: 0.8em;
     left: 17em;
     font-size: xx-small;
+  }
+
+  #iconBtn {
+    width: 30px;
+    height: 30px;
   }
 
   #settingsBtn {
