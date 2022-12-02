@@ -15,8 +15,6 @@ body {
   background-repeat: no-repeat;
   width: 100%;
   height: 100%;
-  min-width: 100vw;
-  min-height: 100vh;
 }
 
 @media (max-width: 768px) {
@@ -136,6 +134,13 @@ a {
 }
 
 /* NON-PLAY DISPLAY*/
+@media (max-width: 768px) {
+  .background-shade {
+    position: center;
+    size: cover;
+  }
+}
+
 .background-shade {
   position: absolute;
   height: 100vh;
@@ -392,6 +397,12 @@ a {
   background-repeat: no-repeat;
   width: 10em;
   height: 4em;
+}
+
+@media (max-width: 768px) {
+  .arrow-button {
+    font-size: medium;
+  }
 }
 
 #previous-question {
