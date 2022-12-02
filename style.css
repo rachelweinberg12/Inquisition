@@ -90,7 +90,7 @@ a {
 
 @media (max-width: 500px) {
   #author {
-    top: 0.7em;
+    top: 0em;
     left: 5em;
   }
 }
