@@ -63,7 +63,7 @@ Have you been loved enough?,askhole,3,5,emotional; personal; yes/no,1
 "Do you feel a greater sense of satisfaction when you gain approval from people who are very similar to you, or very different from you?",askhole,4,2,personal; work,1
 "If you could have one but not the other, would you rather love someone or be loved by someone?",askhole,3,3,personal; relationships,1
 What kind of people do you get along best with?,askhole,4,2,personal,1
-Which of your achievements are you most proud of?,askhole,3,3,personal; work,1
+Whihc of your achievements are you most proud of?,askhole,3,3,personal; work,1
 Given the guarantee that nobody will ask you the question: What is a question that you would refuse to answer?,askhole,2,5,personal,1
 How boring are you?,askhole,2,4,personal,1
 Do you have more thoughts or more feelings?,askhole,1,2,personal; emotional,1
@@ -165,7 +165,7 @@ When did you last sing to yourself? To someone else?,36 questions to fall in lov
 "If you were able to live to the age of 90 and retain either the mind or body of a 30-year-old for the last 60 years of your life, which would you want?",36 questions to fall in love,2,1,personal; would you rather,1
 For what in your life do you feel most grateful?,36 questions to fall in love,5,4,personal; emotional; warm and fuzzy,1
 "If you could change anything about the way you were raised, what would it be?",36 questions to fall in love,5,4,personal,1
-Take four minutes and tell your life story in as much detail as possible.,36 questions to fall in love,3,4,personal,1
+Take four minutes and tell your life story in as much detail as possible.,36 questions to fall in love,3,4,personal,0
 "If you could wake up tomorrow having gained any one quality or ability, what would it be?",36 questions to fall in love,3,3,personal,1
 "If a crystal ball could tell you the truth about yourself, your life, the future or anything else, what would you want to know?",36 questions to fall in love,3,3,personal; intellectual,1
 Is there something that you’ve dreamed of doing for a long time? Why haven’t you done it?,36 questions to fall in love,3,3,personal; work,1
@@ -176,10 +176,10 @@ What is your most terrible memory?,36 questions to fall in love,3,5,personal; em
 "If you knew that in one year you would die suddenly, would you change anything about the way you are now living? Why?",36 questions to fall in love,2,3,personal,1
 What does friendship mean to you?,36 questions to fall in love,1,3,personal,1
 What roles do love and affection play in your life?,36 questions to fall in love,1,4,personal; emotional; relationships,1
-Alternate sharing something you consider a positive characteristic of the person to your right. Share a total of five items.,36 questions to fall in love,4,5,warm and fuzzy,1
+Alternate sharing something you consider a positive characteristic of the person to your right. Share a total of five items.,36 questions to fall in love,4,5,warm and fuzzy,0
 How close and warm is your family? Do you feel your childhood was happier than most other people’s?,36 questions to fall in love,5,4,personal; emotional,1
 How do you feel about your relationship with your mother?,36 questions to fall in love,4,5,personal; emotional,1
-"Make three true “we” statements each. For instance, “We are in this room feeling...""",36 questions to fall in love,2,3,warm and fuzzy,1
+"Make three true “we” statements each. For instance, “We are in this room feeling...""",36 questions to fall in love,2,3,warm and fuzzy,0
 "Complete this sentence: “I wish I had someone with whom I could share ...""",36 questions to fall in love,2,3,personal,1
 "If you were going to become a close friend with your partner, please share what would be important for him or her to know.",36 questions to fall in love,2,4,personal,0
 "Tell your partner what you like about them; be very honest this time, saying things that you might not say to someone you’ve just met.",36 questions to fall in love,5,5,warm and fuzzy,0
@@ -241,3 +241,130 @@ do you prefer spending time with people similar to or different from yourself?,a
 what is your favorite scent?,alexandra,1,1,personal,1
 at what age did you become ‘conscious’?,alexandra,3,3,personal; intellectual,1
 what is one thing you wish your parents had done differently in raising you?,alexandra,3,4,personal,1
+Who are your favorite people? Why?,alex,3,4,personal; relationships,1
+Who is your closest friend? Why?,alex,3,3,personal; relationships,1
+Is there anyone in your life that needs to be forgiven?,alex,2,4,personal; relationships,1
+"Who's the last person you said ""I love you"" to?",alex,3,4,personal; relationships; emotional,1
+What's your biggest turn on?,alex,2,5,sex,1
+What's your biggest turn off?,alex,2,3,sex,1
+"If you had to have a fetish, what would it be?",alex,1,5,sex,1
+What is something in your childhood that shaped you into the person you are today?,alex,3,3,personal,1
+What's your perception of God?,alex,2,4,personal; intellectual,1
+What advice would you give to your younger self?,alex,3,3,personal,1
+Why do you think people stay in toxic relationships?,alex,2,3,intellectual,1
+Which parent are you closest to? Why?,alex,3,3,personal; emotional,1
+How do you feel about kissing on the first date?,alex,2,4,relationships,1
+What's your idea of the perfect person?,alex,3,4,personal,1
+What feelings do you experience the most?,alex,3,4,emotional,1
+What annoys you the most about people?,alex,4,3,emotional,1
+What is a dream you had but never told anybody?,alex,2,4,personal,1
+What's a deal breaker for you in a relationship?,alex,3,3,relationships,1
+Would you ever take back a cheater?,alex,4,3,relationships,1
+What kind of parent do you think you'll be?,alex,3,2,personal,1
+Do you stay friends with your exes?,alex,2,2,relationships,1
+Is it possible to live a life without lies?,alex,2,2,intellectual,1
+Is suffering a normal part of life?,alex,1,2,personal; intellectual,1
+What's the biggest obstacle you had to overcome? How have you overcome it?,alex,3,4,personal,1
+Do you have a fear of commitment?,alex,3,3,relationships,1
+What do parents do that ruin their children at an early age?,alex,2,3,intellectual,1
+What keeps you up at night?,alex,3,4,personal,1
+What's the most traumatizing experience of your life?,alex,4,5,personal; emotional,1
+Why are so many people in the world lonely?,alex,4,3,intellectual; emotional,1
+What drives you nuts?,alex,3,3,personal; emotional,1
+What are your quirks?,alex,3,3,personal,1
+What are some things that people might misunderstand about you that you should clarify?,alex,4,3,personal,1
+What’s the best way to convince you to do something?,alex,2,3,personal,1
+"Do you want to devote most of your life to helping people? If so, who do you want to help, and how?",alex,3,4,personal; intellectual,1
+"Do you care about being polite and civil, generally? When might you not care about being polite?",alex,4,2,personal,1
+Describe what you see as the conceptual relationship between rationality and emotion.,alex,4,2,intellectual,1
+What's your outlook on social justice warriors?,alex,2,3,controversial,1
+What's your outlook on religion?,alex,3,3,intellectual; controversial,1
+What is sacred to you?,alex,4,4,personal; emotional,1
+Does power corrupt?,alex,2,2,intellectual,1
+"Is the world broken and/or bad? How should someone go about fixing it, if so?",alex,4,2,intellectual,1
+What do you want to be better at / change about yourself?,emotional codes,3,4,personal,1
+What aspects of femininity / masculinity do you like?,emotional codes,4,3,intellectual,1
+How much independence did you get from your parents growing up? Do you like the level of independence you had/have?,emotional codes,3,3,personal,1
+What emotion do you feel most often?,emotional codes,3,4,emotional,1
+Would you want to be a parent? Why? How would you want to raise a kid?,emotional codes,4,3,personal,1
+What’s the worst thing you’ve done to someone?,emotional codes,4,5,personal,1
+What other career might you have ended up in?,emotional codes,4,2,work,1
+Should you seek power?,emotional codes,3,4,personal; intellectual,1
+What was the best part of your day? Week? Year?,jackie luo,5,2,personal; warm and fuzzy,1
+Tell me something about yourself that you wouldn’t mention the first time you met someone.,jackie luo,1,2,personal,1
+What’s the best gift you’ve ever given or received?,jackie luo,4,2,personal; ice breaker,1
+What’s your aesthetic? How did you arrive at it?,jackie luo,4,2,personal,1
+"Do you have any nicknames? If so, what’s the story behind them?",jackie luo,2,2,personal; ice breaker,1
+When was the last time you did something for the first time?,jackie luo,2,2,personal; ice breaker,1
+What is your latest discovery about or in the city in which you live?,jackie luo,2,2,ice breaker,1
+What’s your best memory from high school?,jackie luo,3,2,personal,1
+What’s the best compliment you’ve ever received?,jackie luo,5,3,personal; warm and fuzzy,1
+"If you could gain any quality or ability, what would it be?",jackie luo,2,2,personal,1
+"What’s a work (book, movie, etc.) that shaped the person you are today?",jackie luo,3,3,personal,1
+Tell me about a time that you were spontaneous.,jackie luo,3,3,personal,1
+What’s the most illegal act you’ve ever done and are comfortable sharing?,jackie luo,3,3,personal,1
+When did you last leave your comfort zone?,jackie luo,4,3,personal,1
+What was your last epiphany?,jackie luo,3,3,personal; intellectual,1
+Would you pick a different career path if you did life again?,jackie luo,4,3,work,1
+What’s one specific fact about what it’s like to live in your particular body?,jackie luo,5,3,personal,1
+What was your most memorable first kiss?,jackie luo,3,3,relationships; sex,1
+With whom do you have the best connection in your family? Why?,jackie luo,4,4,relationships; personal,1
+What’s the most memorable date you’ve ever had?,jackie luo,5,3,relationships,1
+Tell me about your biggest crush.,jackie luo,5,4,relationships; sex,1
+Who do you respect most in your life? Why?,jackie luo,3,4,personal; work,1
+"Do you have an enemy? If so, why?",jackie luo,3,4,personal,1
+How did your best friend become your best friend?,jackie luo,4,3,personal; relationships,1
+How did your parents’ values shape your career choice?,jackie luo,3,3,work; personal,1
+For what in the past year do you feel most grateful?,jackie luo,4,3,personal; warm and fuzzy,1
+Is there something you’ve dreamed of doing for a long time? Why haven’t you done it?,jackie luo,2,3,personal,1
+What does it mean to you to live a good life?,jackie luo,2,4,personal; warm and fuzzy,1
+What experience have you had that made you a more compassionate person?,jackie luo,4,4,personal; warm and fuzzy,1
+When was the last time you faced a big ethical dilemma? What did you do?,jackie luo,3,4,personal; intellectual,1
+What brings you joy?,jackie luo,2,3,emotional,1
+Do you feel fulfilled by your work? Why or why not?,jackie luo,4,4,work; emotional,1
+When was the last time you were really proud of yourself?,jackie luo,4,4,personal,1
+What’s the most important self-discovery you made about yourself in the past year?,jackie luo,4,4,personal,1
+How do you hope you’ll change as a person in the future?,jackie luo,4,4,personal,1
+What excites you most about the world in which we live?,jackie luo,5,3,personal; emotional; warm and fuzzy,1
+What frustrates you most about the world in which we live?,jackie luo,5,3,personal; emotional,1
+What are three of your personal qualities of which you’re most proud?,jackie luo,4,4,personal; warm and fuzzy,1
+What have you always wanted in romantic relationships but never had?,jackie luo,4,4,relationships; sex,1
+"If you were to die with no warning, what would you most regret not telling someone? Why haven’t you told them yet?",jackie luo,3,4,personal; relationships,1
+What liberates you?,jackie luo,2,4,emotional,1
+Do you have enough love and affection in your life? Why or why not?,jackie luo,4,5,emotional,1
+Tell me about your hardest breakup and why it happened.,jackie luo,3,5,personal; relationships; emotional,1
+What were the major tipping points in your life that shaped your identity most? How did they affect you?,jackie luo,5,4,personal,1
+Tell me about a time that someone really hurt you.,jackie luo,4,5,personal; emotional,1
+Tell me about a time that you really hurt someone else.,jackie luo,4,5,personal; emotional,1
+What makes you look down on other people?,jackie luo,5,4,personal,1
+What do you think makes other people look down on you?,jackie luo,5,4,personal,1
+How do you feel about your relationship with your father?,jackie luo,4,4,personal,1
+How do you assign self-worth?,jackie luo,4,4,personal; intellectual,1
+"If you knew that, in one year, you would die suddenly, would you change anything about the way you’re living now? Why?",jackie luo,2,4,personal,1
+What life experience made you grow the most?,jackie luo,3,4,personal,1
+Are you content? Why or why not?,jackie luo,3,4,emotional,1
+"If you could change one decision you made in your life, what would it be? Why?",jackie luo,4,4,personal,1
+What made you feel most insecure in your childhood?,jackie luo,4,5,personal; emotional,1
+What’s the most depressed you’ve ever been? What happened?,jackie luo,4,5,personal; emotional,1
+What’s a major problem you’re facing in your life right now?,jackie luo,4,5,personal,1
+What do you see as your responsibilities to the world? Your loved ones? Yourself?,jackie luo,3,4,personal; intellectual,1
+What are three of your personal qualities of which you’re most ashamed?,jackie luo,3,4,personal; emotional,1
+Where in your life are you giving more than you’re taking? What about taking more than you’re giving?,jackie luo,5,4,personal,1
+"If you had to rewrite your college common app essay now, what would you write about?",rachel,3,3,personal,1
+"If your life's mission was to decrease feelings of lonliness as much as possible, how would you accomplish that?",rachel,4,2,intellectual,1
+Do you want to be cryogenically frozen when you die? Why or why not?,rachel,3,3,personal; intellectual,1
+Are you a romantic? In what ways does this manifest itself?,rachel,4,3,personal; emotional; relationships,1
+Who would you most like to be?,rachel,3,4,personal,1
+Have you ever had a sex dream about someone in your family?,rachel,2,5,sex,1
+"If you could change your sexuality, would you?",rachel,2,3,sex; relationships,1
+"If you could visit your younger self and hang out for a day, at what age would you like to visit yourself? How about your older self? (assume in either case this does not alter your life trajectory)",rachel,5,2,personal; warm and fuzzy,1
+Do you want your partner to be more powerful than you? Smarter than you?,rachel,4,4,relationships; sex,1
+If you're in a relationship: what's the probability you marry your current partner?,rachel,4,5,relationships,1
+If you're in a relationship: how much would you be willing to pay to avoid losing the relationship?,rachel,3,5,relationships,1
+The divorce rate is ~50%. Do you think your chances of divorce in your own life are better or worse? Why?,rachel,4,4,relationships,1
+What's the happiest marriage you know among people who have been together for over twenty years? What are they doing right?,rachel,4,3,relationships,1
+What do you think of eugenics?,rachel,2,4,controversial,1
+Do you enjoy looking at yourself in the mirror?,rachel,3,4,personal,1
+How do you react to anger?,rachel,4,4,emotional,1
+How many chickens would you remove from battery cages instead of saving a child's life?,rachel,2,2,intellectual,1
+When do you feel petty?,rachel,3,4,emotional,1

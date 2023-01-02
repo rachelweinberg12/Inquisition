@@ -215,6 +215,12 @@ a {
     size: cover;
     box-shadow: 1px 1px 3px black;
   }
+  .pop-up p {
+    padding: 1em 2em;
+  }
+  .pop-up ul {
+    padding: 1em 2em;
+  }
 }
 
 /*INFO BOX*/
@@ -292,8 +298,8 @@ a {
 /*key on the top of the form*/
 #key {
   display: flex;
-  justify-content: center;
   margin: 0;
+  justify-content: center;
 }
 
 .key-item {
@@ -303,7 +309,7 @@ a {
 .key-color {
   height: 20px;
   width: 20px;
-  border-radius: 8px;
+  border-radius: 100%;
   margin: 1em 0.5em;
   box-shadow: 1px 1px 2px black;
 }
@@ -326,13 +332,21 @@ a {
   }
 
   .key-item {
-    margin: 0.5em 0.5em;
+    margin: 0.5em;
   }
 
-  .key-color {
-    height: 15px;
-    width: 15px;
-    margin: 0.5em 0.5em;
+  #key p {
+    padding: 0;
+    margin: 1em 0.5em;
+  }
+
+  #include-color,
+  #ignore-color,
+  #exclude-color {
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 1.5em 0em 0.5em 0.8em;
   }
 }
 
@@ -374,7 +388,7 @@ a {
 
 @media (max-width: 768px) {
   #checkboxes {
-    margin: 1em;
+    margin: 3em;
   }
 }
 

@@ -40,10 +40,13 @@
     <div class="background-shade" v-show="mode === 'info'">
       <div class="pop-up" id="info">
         <button class="xBtn iconBtn" @click="mode = 'play'"></button>
-        <strong>Inquisition</strong> is a compilation of bonding questions from
-        online sources and friends. It includes innocent ice breakers, deep
-        personal inquiries, cornering controversial questions, and more. You can
-        select a curated deck or build your own by tapping on the settings icon.
+        <p>
+          <strong>Inquisition</strong> is a compilation of bonding questions
+          from online sources and friends. It includes innocent ice breakers,
+          deep personal inquiries, cornering controversial questions, and more.
+          You can select a curated deck or build your own by tapping on the
+          settings icon.
+        </p>
         <hr />
         <h3>Where do these questions come from?</h3>
         <ul>
@@ -68,22 +71,46 @@
             <strong>alexandra</strong> is a friend of mine who has her own list
             of 50 bonding questions.
           </li>
-          <br />
+          <li>
+            <strong>alex</strong> is a guy who came over to my house once.
+          </li>
+          <li>
+            <strong
+              ><a href="https://emotional.codes/vulnerability-questions/"
+                >emotional codes</a
+              ></strong
+            >
+            is a website alex showed me.
+          </li>
+          <li>
+            <strong
+              ><a href="http://jackieluo.com/questions">jackie luo</a></strong
+            >
+            is linked on emotional codes.
+          </li>
+          <li><strong>rachel</strong> is me.</li>
+        </ul>
+        <br />
+        <p>
           I'm always happy to add more questions, so email me at
           rachel.weinberg12@gmail.com if you have your own list of interesting
           questions!
-        </ul>
+        </p>
         <hr />
+
         <h3>How are they scored and categorized?</h3>
-        Just my opinions. I tend to like questions that are clear (rather than
-        leading to discussions about what the questions is even asking),
-        specific (so that people don't spend a long time searching for the ideal
-        answer), and of course controversial/introspective/deep or something.
-        <br />
-        <br />I labelled them really fast so if you have any complaints about my
-        scores and categorizations please let me know, you're likely correct.
-        Also let me know if there's a category or setting that's missing that
-        you think would be useful.
+        <p>
+          Just my opinions. I tend to like questions that are clear (rather than
+          leading to discussions about what the questions is even asking),
+          specific (so that people don't spend a long time searching for the
+          ideal answer), and of course controversial/introspective/deep or
+          something.
+          <br />
+          <br />I labelled them really fast so if you have any complaints about
+          my scores and categorizations please let me know, you're likely
+          correct. Also let me know if there's a category or setting that's
+          missing that you think would be useful.
+        </p>
       </div>
     </div>
     <div class="background-shade" v-show="mode === 'settings'">
@@ -102,14 +129,14 @@
         <div id="key">
           <div class="key-item">
             <p class="key-color" id="include-color"></p>
-            <p>include&nbsp&nbsp&nbsp&nbsp</p>
+            <p>include</p>
           </div>
           <div
             class="key-item"
             title="some cards have multiple tags. If a card has only ignored (or excluded) tags, it won't be added to your deck. If it has ignored and included tags, it will be added."
           >
             <p class="key-color" id="ignore-color"></p>
-            <p>ignore&nbsp&nbsp&nbsp&nbsp</p>
+            <p>ignore</p>
           </div>
           <div class="key-item">
             <p class="key-color" id="exclude-color"></p>
@@ -177,7 +204,7 @@
       <button class="card" @click="nextCard">
         {{ filteredDeck[index].question }}
         <div id="feature-display">
-          <p class="feature">source: {{ filteredDeck[index].source }}</p>
+          <p class="feature"><i>{{ filteredDeck[index].source }}</i></p>
           <p class="feature">intimacy: {{ filteredDeck[index].intimacy }}</p>
           <p class="feature">quality: {{ filteredDeck[index].quality }}</p>
           <p class="feature">
