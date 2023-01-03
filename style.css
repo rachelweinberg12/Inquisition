@@ -388,7 +388,7 @@ a {
 
 @media (max-width: 768px) {
   #checkboxes {
-    margin: 3em;
+    margin: 2em;
   }
 }
 
@@ -397,7 +397,7 @@ a {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin: 0 1.5em;
+  margin: 0 1em;
   cursor: pointer;
   font-size: large;
   -webkit-user-select: none;
@@ -509,15 +509,19 @@ a {
 @media (max-width: 768px) {
   .card {
     font-size: large;
-    margin: 5em auto 0em;
+    margin: 4.5em auto 0em;
     padding: 1em;
     width: 90%;
-    height: 15em;
+    height: 14em;
+    justify-content: center;
   }
 
   #feature-display {
     font-size: xx-small;
-    justify-content: center;
+    position: absolute;
+    bottom: 1%;
+    margin: auto;
+    padding: 0.5em;
   }
 }
 
@@ -545,7 +549,7 @@ a {
 @media (max-width: 768px) {
   .arrow-button {
     font-size: medium;
-    margin: 2em 2em;
+    margin: 1em 1em;
   }
 }
 
