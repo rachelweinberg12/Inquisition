@@ -522,6 +522,7 @@ a {
     bottom: 1%;
     margin: auto;
     padding: 0.5em;
+    align-items: center;
   }
 }
 
