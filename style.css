@@ -9,7 +9,7 @@ body {
   --light-yellow: #ffe599;
   --dark-yellow: #ffc823;
   font-size: medium;
-  background: url("background.jpg") no-repeat center center fixed;
+  background: url("/images/background.jpg") no-repeat center center fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -127,13 +127,13 @@ a {
 }
 
 #settingsBtn {
-  background-image: url("gear_icon.png");
+  background-image: url("/images/gear_icon.png");
   top: 2.7em;
   right: 2em;
 }
 
 #infoBtn {
-  background-image: url("info_icon.png");
+  background-image: url("/images/info_icon.png");
   background-size: 105%;
   top: 2.7em;
   right: 6em;
@@ -179,7 +179,7 @@ a {
 }
 
 .xBtn {
-  background-image: url("x_button.png");
+  background-image: url("/images/x_button.png");
   background-size: 140%;
   background-color: white;
   top: 15px;
@@ -270,15 +270,15 @@ a {
   display: flex;
   justify-content: center;
   background-color: var(--light-blue);
-  padding: 1em;
+  padding: 0 0.5em;
 }
 
 .preset {
   border: 2px solid black;
   background-color: var(--dark-yellow);
-  margin: 0em 2em;
-  width: 10em;
-  height: 7em;
+  margin: 0em 1em;
+  width: 9em;
+  height: 5em;
   border-radius: 10px;
 }
 
@@ -288,7 +288,7 @@ a {
   }
 
   .preset {
-    margin: 0em 3%;
+    margin: 0em 5%;
     width: 27%;
     height: 6em;
     font-size: small;
@@ -539,13 +539,13 @@ a {
   transition: background 0.5s;
   border: none;
   border-radius: 40px;
-  margin: 2em 5em;
-  background-image: url("arrow2.png");
+  margin: 2em 4em;
+  background-image: url("/images/arrow2.png");
   background-position: 50% 50%;
   background-size: 90%;
   background-repeat: no-repeat;
-  width: 10em;
-  height: 4em;
+  width: 12em;
+  height: 5em;
 }
 
 @media (max-width: 768px) {
