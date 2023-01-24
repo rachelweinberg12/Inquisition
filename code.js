@@ -46,7 +46,12 @@ function buildCard(cardStr) {
   cardObj.quality = parseInt(attributes[1]);
   cardObj.intimacy = parseInt(attributes[2]);
   cardObj.tags = attributes[3].split(";");
-  cardObj.twoPlayer = !attributes[4];
+  if (attributes[4] === "1") {
+    cardObj.twoPlayer = false;
+  } else {
+    cardObj.twoPlayer = true;
+  }
+  //cardObj.twoPlayer = !attributes[4];
   //add any not-yet-seen tag to the tagPrefs object
   for (let i = 0; i < cardObj.tags.length; i++) {
     cardObj.tags[i] = cardObj.tags[i].trim();
