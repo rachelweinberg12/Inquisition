@@ -207,7 +207,18 @@
       <button class="card" @click="nextCard">
         {{ filteredDeck[index].question }}
         <div id="feature-display">
-          <p class="feature"><i>{{ filteredDeck[index].source }}</i></p>
+          <p
+            class="feature"
+            v-if="filteredDeck[index].source != '36 questions to fall in love'"
+          >
+            <i>{{ filteredDeck[index].source }}</i>
+          </p>
+          <p
+            class="feature"
+            v-if="filteredDeck[index].source === '36 questions to fall in love'"
+          >
+            <i>36 questions</i>
+          </p>
           <p class="feature">intimacy: {{ filteredDeck[index].intimacy }}</p>
           <p class="feature">quality: {{ filteredDeck[index].quality }}</p>
           <p class="feature">
